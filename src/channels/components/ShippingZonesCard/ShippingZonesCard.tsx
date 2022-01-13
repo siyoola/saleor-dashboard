@@ -47,6 +47,15 @@ const useExpanderStyles = makeStyles(
   { name: "ShippingZonesCardExpander" }
 );
 
+const useStyles = makeStyles(
+  theme => ({
+    infoMessage: {
+      padding: theme.spacing(3)
+    }
+  }),
+  { name: "ShippingZonesCard" }
+);
+
 type ShippingZonesCardProps = ShippingZonesProps;
 
 const ShippingZonesCard: React.FC<ShippingZonesCardProps> = props => {
@@ -57,6 +66,7 @@ const ShippingZonesCard: React.FC<ShippingZonesCardProps> = props => {
   } = props;
 
   const expanderClasses = useExpanderStyles({});
+  const classes = useStyles();
   const intl = useIntl();
 
   const hasMoreZonesToBeSelected = totalCount !== shippingZones.length;
