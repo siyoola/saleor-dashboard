@@ -301,6 +301,7 @@ type AppExtension implements Node {
   view: AppExtensionViewEnum!
   type: AppExtensionTypeEnum!
   target: AppExtensionTargetEnum!
+  openAs: AppExtensionOpenAsEnum!
   permissions: [Permission!]!
   accessToken: String
 }
@@ -320,20 +321,34 @@ input AppExtensionFilterInput {
   view: AppExtensionViewEnum
   type: AppExtensionTypeEnum
   target: AppExtensionTargetEnum
+  openAs: AppExtensionOpenAsEnum
+}
+
+enum AppExtensionOpenAsEnum {
+  POPUP
+  APP_PAGE
 }
 
 enum AppExtensionTargetEnum {
   MORE_ACTIONS
   CREATE
+  CATALOG
+  ORDERS
+  CUSTOMERS
+  DISCOUNTS
+  TRANSLATIONS
+  PAGES
 }
 
 enum AppExtensionTypeEnum {
   OVERVIEW
   DETAILS
+  NAVIGATION
 }
 
 enum AppExtensionViewEnum {
   PRODUCT
+  ALL
 }
 
 type AppFetchManifest {
@@ -383,6 +398,7 @@ type AppManifestExtension {
   view: AppExtensionViewEnum!
   type: AppExtensionTypeEnum!
   target: AppExtensionTargetEnum!
+  openAs: AppExtensionOpenAsEnum!
 }
 
 type AppRetryInstall {
@@ -1025,7 +1041,7 @@ type Checkout implements Node & ObjectWithMetadata {
   availableShippingMethods: [ShippingMethod]!
   availableCollectionPoints: [Warehouse!]!
   availablePaymentGateways: [PaymentGateway!]!
-  email: String!
+  email: String
   isShippingRequired: Boolean!
   quantity: Int!
   stockReservationExpires: DateTime
@@ -1144,6 +1160,7 @@ enum CheckoutErrorCode {
   MISSING_CHANNEL_SLUG
   CHANNEL_INACTIVE
   UNAVAILABLE_VARIANT_IN_CHANNEL
+  EMAIL_NOT_SET
 }
 
 input CheckoutFilterInput {
@@ -4966,6 +4983,7 @@ enum PaymentErrorCode {
   NOT_SUPPORTED_GATEWAY
   CHANNEL_INACTIVE
   BALANCE_CHECK_ERROR
+  CHECKOUT_EMAIL_NOT_SET
 }
 
 input PaymentFilterInput {
