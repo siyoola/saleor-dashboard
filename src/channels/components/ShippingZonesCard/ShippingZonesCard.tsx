@@ -24,6 +24,10 @@ const messages = defineMessages({
     defaultMessage:
       "Select shipping zones that will be supplied via this channel. You can assign Shipping Zones to multiple channels.",
     description: "card subtitle"
+  },
+  allSelectedMessage: {
+    defaultMessage: "All available shipping zones have been selected",
+    description: "all selected zones card message"
   }
 });
 
@@ -78,7 +82,10 @@ const ShippingZonesCard: React.FC<ShippingZonesCardProps> = props => {
         <Typography>{intl.formatMessage(messages.subtitle)}</Typography>
       </CardContent>
       <Accordion classes={expanderClasses}>
-        <ShippingZonesListHeader shippingZones={shippingZones} />
+        <ShippingZonesListHeader
+          shippingZones={shippingZones}
+          totalCount={totalCount}
+        />
         <Divider />
         {shippingZones.map(zone => (
           <ShippingZoneItem zone={zone} onDelete={removeShippingZone} />
