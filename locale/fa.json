@@ -406,7 +406,7 @@
   },
   "src_dot_apps_dot_components_dot_AppDeleteDialog_dot_3817179919": {
     "context": "delete app",
-    "string": "Deleting {name}, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in Saleor Marketplace. Are you sure you want to delete the app?"
+    "string": "Deleting {name}, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in Siyool Marketplace. Are you sure you want to delete the app?"
   },
   "src_dot_apps_dot_components_dot_AppDetailsPage_dot_1782042241": {
     "context": "link",
@@ -470,7 +470,7 @@
   },
   "src_dot_apps_dot_components_dot_AppInProgressDeleteDialog_dot_3817179919": {
     "context": "delete app",
-    "string": "Deleting {name}, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in Saleor Marketplace. Are you sure you want to delete the app?"
+    "string": "Deleting {name}, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in Siyool Marketplace. Are you sure you want to delete the app?"
   },
   "src_dot_apps_dot_components_dot_AppInstallErrorPage_dot_1152717819": {
     "context": "title",
@@ -478,7 +478,7 @@
   },
   "src_dot_apps_dot_components_dot_AppInstallErrorPage_dot_1261716527": {
     "context": "content",
-    "string": "Saleor couldn’t fetch crucial information regarding installation. Without those System can’t install the app in your Saleor. Please use the button below to get back to system’s dashboard."
+    "string": "Siyool couldn’t fetch crucial information regarding installation. Without those System can’t install the app in your Siyool. Please use the button below to get back to system’s dashboard."
   },
   "src_dot_apps_dot_components_dot_AppInstallErrorPage_dot_3375237564": {
     "context": "button",
@@ -530,7 +530,7 @@
   },
   "src_dot_apps_dot_components_dot_CustomAppCreatePage_dot_3076071936": {
     "context": "card description",
-    "string": "Expand or restrict app permissions to access certain part of Saleor system."
+    "string": "Expand or restrict app permissions to access certain part of Siyool system."
   },
   "src_dot_apps_dot_components_dot_CustomAppCreatePage_dot_3189779214": {
     "context": "header",
@@ -563,7 +563,7 @@
   },
   "src_dot_apps_dot_components_dot_CustomAppDetailsPage_dot_3076071936": {
     "context": "card description",
-    "string": "Expand or restrict app permissions to access certain part of Saleor system."
+    "string": "Expand or restrict app permissions to access certain part of Siyool system."
   },
   "src_dot_apps_dot_components_dot_CustomAppDetailsPage_dot_570656367": {
     "context": "checkbox label",
@@ -625,7 +625,7 @@
   },
   "src_dot_apps_dot_components_dot_Marketplace_dot_2932910073": {
     "context": "section header",
-    "string": "Saleor Marketplace"
+    "string": "Siyool Marketplace"
   },
   "src_dot_apps_dot_components_dot_Marketplace_dot_3259214524": {
     "context": "marketplace content",
@@ -637,7 +637,7 @@
   },
   "src_dot_apps_dot_components_dot_Marketplace_dot_52985091": {
     "context": "marketplace content",
-    "string": "Discover great free and paid apps in our Saleor Marketplace."
+    "string": "Discover great free and paid apps in our Siyool Marketplace."
   },
   "src_dot_apps_dot_components_dot_TokenCreateDialog_dot_1336855942": {
     "string": "Generated Token"
@@ -823,7 +823,7 @@
     "string": "برچسب پیش‌فرض"
   },
   "src_dot_attributes_dot_components_dot_AttributeOrganization_dot_205334083": {
-    "string": "Define where this attribute should be used in Saleor system"
+    "string": "Define where this attribute should be used in Siyool system"
   },
   "src_dot_attributes_dot_components_dot_AttributeOrganization_dot_3829816432": {
     "context": "section header",
@@ -3069,7 +3069,7 @@
   },
   "src_dot_orders_dot_components_dot_OrderCannotCancelOrderDialog_dot_1561587911": {
     "context": "dialog header",
-    "string": "Saleor couldn’t cancel order"
+    "string": "Siyool couldn’t cancel order"
   },
   "src_dot_orders_dot_components_dot_OrderCannotCancelOrderDialog_dot_775268031": {
     "string": "There are still fulfillments created for this order. Cancel the fulfillments first before you cancel the order."
@@ -5230,7 +5230,7 @@
     "string": "ویژگی‌ها"
   },
   "src_dot_readOnly": {
-    "string": "Saleor runs in read-only mode. Changes not saved."
+    "string": "Siyool runs in read-only mode. Changes not saved."
   },
   "src_dot_readyToCapture": {
     "context": "order status",
@@ -5737,7 +5737,7 @@
     "string": "This where you will find all of the settings determining your stores e-mails. You can determine main email address and some of the contents of your emails."
   },
   "src_dot_somethingWentWrong": {
-    "string": "Saleor ran into an unexpected problem"
+    "string": "Siyool ran into an unexpected problem"
   },
   "src_dot_staff": {
     "context": "staff section name",
@@ -6539,7 +6539,7 @@
   },
   "src_dot_webhooks_dot_components_dot_WebhookEvents_dot_3051538277": {
     "context": "webhook events",
-    "string": "Expand or restrict webhooks permissions to register certain events in Saleor system."
+    "string": "Expand or restrict webhooks permissions to register certain events in Siyool system."
   },
   "src_dot_webhooks_dot_components_dot_WebhookEvents_dot_3316426878": {
     "context": "event",

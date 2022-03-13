@@ -153,7 +153,7 @@ export const useStyles = makeStyles(
       color: theme.palette.text.hint,
       marginTop: theme.spacing(1)
     },
-    installSaleorIcon: {
+    installSiyoolIcon: {
       backgroundColor: theme.palette.secondary.main,
       border: "none"
     },

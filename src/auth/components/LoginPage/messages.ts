@@ -13,7 +13,7 @@ export const errorMessages = defineMessages({
   },
   serverError: {
     defaultMessage:
-      "Saleor is unavailable, please check your network connection and try again.",
+      "Siyool is unavailable, please check your network connection and try again.",
     description: "error message"
   }
 });

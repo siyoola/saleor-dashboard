@@ -90,7 +90,7 @@ const Layout: React.FC = props => {
         />
         <div className={classes.mainPanelContent}>{children}</div>
         <footer className={classes.footer}>
-          ©2021 Saleor Commerce. All rights reserved
+          ©2021 Siyool Commerce. All rights reserved
         </footer>
       </div>
       <div className={classes.sidebar}>

@@ -62,7 +62,7 @@ export const AppInstallPage: React.FC<AppInstallPageProps> = ({
               <div
                 className={classNames(
                   classes.installIcon,
-                  classes.installSaleorIcon
+                  classes.installSiyoolIcon
                 )}
               >
                 <img src={saleorDarkLogoSmall} alt="" />

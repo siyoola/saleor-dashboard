@@ -74,7 +74,7 @@ const AttributeOrganization: React.FC<AttributeOrganizationProps> = props => {
               <>
                 <FormattedMessage defaultMessage="Attribute Class" />
                 <Typography variant="caption">
-                  <FormattedMessage defaultMessage="Define where this attribute should be used in Saleor system" />
+                  <FormattedMessage defaultMessage="Define where this attribute should be used in Siyool system" />
                 </Typography>
               </>
             }

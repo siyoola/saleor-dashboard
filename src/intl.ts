@@ -76,7 +76,7 @@ export const commonMessages = defineMessages({
     defaultMessage: "Properties"
   },
   readOnly: {
-    defaultMessage: "Saleor runs in read-only mode. Changes not saved."
+    defaultMessage: "Siyool runs in read-only mode. Changes not saved."
   },
   requiredField: {
     defaultMessage: "This field is required"
@@ -91,7 +91,7 @@ export const commonMessages = defineMessages({
     defaultMessage: "Your session has expired. Please log in again to continue."
   },
   somethingWentWrong: {
-    defaultMessage: "Saleor ran into an unexpected problem"
+    defaultMessage: "Siyool ran into an unexpected problem"
   },
   startDate: {
     defaultMessage: "Start Date"

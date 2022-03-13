@@ -33,7 +33,7 @@ about: Create a report to help us improve
 
 **System information**
 
-Saleor version:
+Siyool version:
 - [ ] dev (current main)
 - [ ] 3.0
 - [ ] 2.11

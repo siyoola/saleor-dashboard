@@ -6,7 +6,7 @@ export const shop: SiteSettings_shop = {
     __typename: "Address",
     city: "Kenstad",
     cityArea: "Alabama",
-    companyName: "Saleor e-commerce",
+    companyName: "Siyool e-commerce",
     country: {
       __typename: "CountryDisplay",
       code: "UA",
@@ -30,13 +30,13 @@ export const shop: SiteSettings_shop = {
   ],
   customerSetPasswordUrl: "https://example.com/reset-password",
   defaultMailSenderAddress: "noreply@example.com",
-  defaultMailSenderName: "Saleor",
+  defaultMailSenderName: "Siyool",
   description: "Lorem ipsum dolor sit amet",
   domain: {
     __typename: "Domain",
     host: "localhost:8000"
   },
-  name: "Saleor e-commerce",
+  name: "Siyool e-commerce",
   reserveStockDurationAnonymousUser: 10,
   reserveStockDurationAuthenticatedUser: 10,
   limitQuantityPerCheckout: 50

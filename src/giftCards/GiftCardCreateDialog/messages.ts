@@ -56,7 +56,7 @@ export const giftCardCreateMessages = defineMessages({
   },
   bulkCreateExplanation: {
     defaultMessage:
-      "After creation Saleor will create a list of gift card codes that you will be able to download. ",
+      "After creation Siyool will create a list of gift card codes that you will be able to download. ",
     description: "gift card bulk create modal bottom explanation"
   },
   bulkCreateIssuedTitle: {
