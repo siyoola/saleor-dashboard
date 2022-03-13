@@ -69,7 +69,7 @@ const ProductVariantMediaSelectDialog: React.FC<ProductVariantImageSelectDialogP
           description="dialog header"
         />
       </DialogTitle>
-      <DialogContent>
+      <DialogContent style={{ overflow: "scroll" }}>
         <div className={classes.root}>
           {media
             .sort((prev, next) => (prev.sortOrder > next.sortOrder ? 1 : -1))
