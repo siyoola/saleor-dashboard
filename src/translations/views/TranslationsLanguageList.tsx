@@ -12,7 +12,11 @@ const TranslationsLanguageList: React.FC = () => {
 
   return (
     <TranslationsLanguageListPage
-      languages={maybe(() => shop.languages)}
+      languages={maybe(() =>
+        shop.languages.filter(
+          lang => lang.code === "AR_LY" || lang.code === "EN_US"
+        )
+      )}
       //   onAdd={undefined}
       onRowClick={code => navigate(languageEntitiesUrl(code, {}))}
     />

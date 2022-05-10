@@ -2,15 +2,15 @@ import { getMatchingLocale, Locale } from "./Locale";
 
 describe("Matches locale to browser settings", () => {
   it("if first language is an exact match", () => {
-    const locales = ["fr", "es", "en"];
+    const locales = ["ar"];
 
-    expect(getMatchingLocale(locales)).toBe(Locale.FR);
+    expect(getMatchingLocale(locales)).toBe(Locale.AR);
   });
 
   it("if there is an exact match, but it's not first preference", () => {
-    const locales = ["does-not-exist", "tr", "de", "fr"];
+    const locales = ["does-not-exist", "en"];
 
-    expect(getMatchingLocale(locales)).toBe(Locale.TR);
+    expect(getMatchingLocale(locales)).toBe(Locale.EN);
   });
 
   it("or returns undefined if there is no match", () => {
