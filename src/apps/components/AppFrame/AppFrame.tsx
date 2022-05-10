@@ -9,6 +9,7 @@ import { useAppActions } from "./useAppActions";
 interface Props {
   src: string;
   appToken: string;
+  appId: string;
   onLoad?(): void;
   onError?(): void;
 }
@@ -18,6 +19,7 @@ const getOrigin = (url: string) => new URL(url).origin;
 export const AppFrame: React.FC<Props> = ({
   src,
   appToken,
+  appId,
   onLoad,
   onError
 }) => {
@@ -50,10 +52,11 @@ export const AppFrame: React.FC<Props> = ({
   return (
     <iframe
       ref={frameRef}
-      src={urlJoin(src, `?domain=${shop.domain.host}`)}
+      src={urlJoin(src, `?domain=${shop.domain.host}&id=${appId}`)}
       onError={onError}
       onLoad={handleLoad}
       className={classes.iframe}
+      sandbox="allow-same-origin allow-forms allow-scripts"
     />
   );
 };

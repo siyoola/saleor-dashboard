@@ -1,9 +1,9 @@
 import { FetchResult, MutationResult } from "@apollo/client";
+import { UserPermissionFragment } from "@saleor/graphql";
 import { ConfirmButtonTransitionState } from "@saleor/macaw-ui";
 
-import { IFilter, IFilterElement } from "./components/Filter";
+import { FilterElement, IFilter } from "./components/Filter";
 import { MultiAutocompleteChoiceType } from "./components/MultiAutocompleteSelectField";
-import { User_userPermissions } from "./fragments/types/User";
 
 export interface UserError {
   field: string | null;
@@ -61,7 +61,7 @@ export interface ListProps<TColumns extends string = string> {
     value: ListSettings<TColumns>[T]
   ) => void;
   onListSettingsReset?: () => void;
-  filterDependency?: IFilterElement;
+  filterDependency?: FilterElement;
 }
 
 export interface SortPage<TSortKey extends string> {
@@ -165,6 +165,9 @@ export type FiltersWithMultipleValues<TFilters extends string> = Partial<
 export type FiltersAsDictWithMultipleValues<TFilters extends string> = Partial<
   Record<TFilters, Record<string, string[]>>
 >;
+export type FiltersWithKeyValueValues<TFilters extends string> = Partial<
+  Record<TFilters, KeyValue[]>
+>;
 export type Search = Partial<{
   query: string;
 }>;
@@ -195,11 +198,16 @@ export interface FetchMoreProps {
 export type TabActionDialog = "save-search" | "delete-search";
 
 export interface UserPermissionProps {
-  userPermissions: User_userPermissions[];
+  userPermissions: UserPermissionFragment[];
 }
 
 export interface MutationResultAdditionalProps {
   status: ConfirmButtonTransitionState;
+}
+
+export interface KeyValue {
+  key: string;
+  value?: string;
 }
 
 export type MinMax = Record<"min" | "max", string>;
@@ -224,3 +232,7 @@ export enum StatusType {
   WARNING = "warning",
   SUCCESS = "success"
 }
+
+export type RelayToFlat<T extends { edges: Array<{ node: any }> }> = Array<
+  T["edges"][0]["node"]
+>;

@@ -6,22 +6,22 @@ import Hr from "@saleor/components/Hr";
 import PageHeader from "@saleor/components/PageHeader";
 import PageSectionHeader from "@saleor/components/PageSectionHeader";
 import Savebar from "@saleor/components/Savebar";
-import { ShopErrorFragment } from "@saleor/fragments/types/ShopErrorFragment";
+import { ShopErrorFragment, SiteSettingsQuery } from "@saleor/graphql";
 import useAddressValidation from "@saleor/hooks/useAddressValidation";
 import { SubmitPromise } from "@saleor/hooks/useForm";
 import useStateFromProps from "@saleor/hooks/useStateFromProps";
 import { commonMessages, sectionNames } from "@saleor/intl";
-import { ConfirmButtonTransitionState } from "@saleor/macaw-ui";
-import { Backlink } from "@saleor/macaw-ui";
-import { makeStyles } from "@saleor/macaw-ui";
+import {
+  Backlink,
+  ConfirmButtonTransitionState,
+  makeStyles
+} from "@saleor/macaw-ui";
 import createSingleAutocompleteSelectHandler from "@saleor/utils/handlers/singleAutocompleteSelectChangeHandler";
 import { mapCountriesToChoices } from "@saleor/utils/maps";
 import React from "react";
 import { useIntl } from "react-intl";
 
-import { SiteSettings_shop } from "../../types/SiteSettings";
 import SiteCheckoutSettingsCard from "../SiteCheckoutSettingsCard";
-import SiteSettingsDetailsCard from "../SiteDetailsSettingsCard";
 import { messages } from "./messages";
 
 export interface SiteSettingsPageAddressFormData {
@@ -38,8 +38,6 @@ export interface SiteSettingsPageAddressFormData {
 export interface SiteSettingsPageFormData
   extends SiteSettingsPageAddressFormData {
   description: string;
-  domain: string;
-  name: string;
   reserveStockDurationAnonymousUser: number;
   reserveStockDurationAuthenticatedUser: number;
   limitQuantityPerCheckout: number;
@@ -48,7 +46,7 @@ export interface SiteSettingsPageFormData
 export interface SiteSettingsPageProps {
   disabled: boolean;
   errors: ShopErrorFragment[];
-  shop: SiteSettings_shop;
+  shop: SiteSettingsQuery["shop"];
   saveButtonBarState: ConfirmButtonTransitionState;
   onBack: () => void;
   onSubmit: (data: SiteSettingsPageFormData) => SubmitPromise;
@@ -115,8 +113,6 @@ const SiteSettingsPage: React.FC<SiteSettingsPageProps> = props => {
   const initialForm: SiteSettingsPageFormData = {
     ...initialFormAddress,
     description: shop?.description || "",
-    domain: shop?.domain.host || "",
-    name: shop?.name || "",
     reserveStockDurationAnonymousUser: shop?.reserveStockDurationAnonymousUser,
     reserveStockDurationAuthenticatedUser:
       shop?.reserveStockDurationAuthenticatedUser,
@@ -133,8 +129,9 @@ const SiteSettingsPage: React.FC<SiteSettingsPageProps> = props => {
         return submitFunc(data);
       }}
       confirmLeave
+      disabled={disabled}
     >
-      {({ change, data, hasChanged, submit }) => {
+      {({ change, data, isSaveDisabled, submit }) => {
         const countryChoices = mapCountriesToChoices(shop?.countries || []);
         const handleCountryChange = createSingleAutocompleteSelectHandler(
           change,
@@ -152,19 +149,6 @@ const SiteSettingsPage: React.FC<SiteSettingsPageProps> = props => {
               underline={true}
             />
             <Grid variant="inverted">
-              <PageSectionHeader
-                title={intl.formatMessage(sectionNames.siteSettings)}
-                description={intl.formatMessage(
-                  messages.sectionDetailsDescription
-                )}
-              />
-              <SiteSettingsDetailsCard
-                data={data}
-                errors={errors}
-                disabled={disabled}
-                onChange={change}
-              />
-              <Hr className={classes.hr} />
               <PageSectionHeader
                 title={intl.formatMessage(messages.sectionCheckoutTitle)}
                 description={intl.formatMessage(
@@ -200,7 +184,7 @@ const SiteSettingsPage: React.FC<SiteSettingsPageProps> = props => {
             </Grid>
             <Savebar
               state={saveButtonBarState}
-              disabled={disabled || !hasChanged}
+              disabled={isSaveDisabled}
               onCancel={onBack}
               onSubmit={submit}
             />

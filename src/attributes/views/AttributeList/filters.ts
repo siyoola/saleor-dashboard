@@ -2,9 +2,9 @@ import {
   AttributeFilterKeys,
   AttributeListFilterOpts
 } from "@saleor/attributes/components/AttributeListPage";
-import { IFilterElement } from "@saleor/components/Filter";
+import { FilterElement } from "@saleor/components/Filter";
+import { AttributeFilterInput } from "@saleor/graphql";
 import { maybe, parseBoolean } from "@saleor/misc";
-import { AttributeFilterInput } from "@saleor/types/globalTypes";
 
 import {
   createFilterTabUtils,
@@ -83,7 +83,7 @@ export function getFilterVariables(
 }
 
 export function getFilterQueryParam(
-  filter: IFilterElement<AttributeFilterKeys>
+  filter: FilterElement<AttributeFilterKeys>
 ): AttributeListUrlFilters {
   const { name } = filter;
 

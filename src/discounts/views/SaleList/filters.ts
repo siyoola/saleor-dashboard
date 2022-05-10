@@ -1,15 +1,15 @@
-import { IFilterElement } from "@saleor/components/Filter";
+import { FilterElement, FilterElementRegular } from "@saleor/components/Filter";
 import { SingleAutocompleteChoiceType } from "@saleor/components/SingleAutocompleteSelectField";
 import {
   SaleFilterKeys,
   SaleListFilterOpts
 } from "@saleor/discounts/components/SaleListPage";
-import { findValueInEnum, joinDateTime, maybe } from "@saleor/misc";
 import {
   DiscountStatusEnum,
   DiscountValueTypeEnum,
   SaleFilterInput
-} from "@saleor/types/globalTypes";
+} from "@saleor/graphql";
+import { findValueInEnum, joinDateTime, maybe } from "@saleor/misc";
 
 import {
   createFilterTabUtils,
@@ -86,14 +86,14 @@ export function getFilterVariables(
 }
 
 export function getFilterQueryParam(
-  filter: IFilterElement<SaleFilterKeys>
+  filter: FilterElement<SaleFilterKeys>
 ): SaleListUrlFilters {
   const { name } = filter;
 
   switch (name) {
     case SaleFilterKeys.saleType:
       return getSingleEnumValueQueryParam(
-        filter,
+        filter as FilterElementRegular<SaleFilterKeys.saleType>,
         SaleListUrlFiltersEnum.type,
         DiscountValueTypeEnum
       );
@@ -107,7 +107,7 @@ export function getFilterQueryParam(
 
     case SaleFilterKeys.status:
       return getMultipleEnumValueQueryParam(
-        filter,
+        filter as FilterElementRegular<SaleFilterKeys.status>,
         SaleListUrlFiltersWithMultipleValues.status,
         DiscountStatusEnum
       );

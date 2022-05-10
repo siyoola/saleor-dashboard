@@ -1,10 +1,10 @@
-import { IFilterElement } from "@saleor/components/Filter";
+import { FilterElement } from "@saleor/components/Filter";
 import {
   CustomerFilterKeys,
   CustomerListFilterOpts
 } from "@saleor/customers/components/CustomerListPage";
+import { CustomerFilterInput } from "@saleor/graphql";
 import { maybe } from "@saleor/misc";
-import { CustomerFilterInput } from "@saleor/types/globalTypes";
 
 import {
   createFilterTabUtils,
@@ -70,7 +70,7 @@ export function getFilterVariables(
 }
 
 export function getFilterQueryParam(
-  filter: IFilterElement<CustomerFilterKeys>
+  filter: FilterElement<CustomerFilterKeys>
 ): CustomerListUrlFilters {
   const { name } = filter;
 

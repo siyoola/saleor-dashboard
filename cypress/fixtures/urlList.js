@@ -18,7 +18,6 @@ export const urlList = {
   pageTypes: "page-types/",
   permissionsGroups: "permission-groups/",
   plugins: "plugins/",
-  priceRate: "price/",
   products: "products/",
   productTypes: "product-types/",
   sales: "discounts/sales/",
@@ -30,9 +29,11 @@ export const urlList = {
   variants: "variant/",
   vouchers: "discounts/vouchers/",
   variant: "variant/",
-  warehouses: "warehouses/",
-  weightRete: "weight/"
+  warehouses: "warehouses/"
 };
+
+export const addVariantUrl = productId =>
+  `${urlList.products}${productId}/${urlList.variants}add`;
 
 export const appDetailsUrl = appId => `${urlList.apps}custom/${appId}`;
 
@@ -77,11 +78,8 @@ export const shippingZoneDetailsUrl = shippingZoneId =>
 
 export const userDetailsUrl = userId => `${urlList.staffMembers}${userId}`;
 
-export const weightRateUrl = (shippingZoneId, weightRateId) =>
-  `${urlList.shippingMethods}${shippingZoneId}/${urlList.weightRete}${weightRateId}`;
-
-export const priceRateUrl = (shippingZoneId, priceRateId) =>
-  `${urlList.shippingMethods}${shippingZoneId}/${urlList.priceRate}${priceRateId}`;
+export const shippingRateUrl = (shippingZoneId, weightRateId) =>
+  `${urlList.shippingMethods}${shippingZoneId}/${weightRateId}`;
 
 export const warehouseDetailsUrl = warehouseId =>
   `${urlList.warehouses}${warehouseId}`;

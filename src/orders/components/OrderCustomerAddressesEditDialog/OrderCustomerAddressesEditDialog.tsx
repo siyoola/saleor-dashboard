@@ -10,25 +10,24 @@ import VerticalSpacer from "@saleor/apps/components/VerticalSpacer";
 import Checkbox from "@saleor/components/Checkbox";
 import ConfirmButton from "@saleor/components/ConfirmButton";
 import FormSpacer from "@saleor/components/FormSpacer";
-import { ShopInfo_shop_countries } from "@saleor/components/Shop/types/ShopInfo";
 import { AddressTypeInput } from "@saleor/customers/types";
 import {
-  CustomerAddresses_user_addresses,
-  CustomerAddresses_user_defaultBillingAddress,
-  CustomerAddresses_user_defaultShippingAddress
-} from "@saleor/customers/types/CustomerAddresses";
-import { OrderErrorFragment } from "@saleor/fragments/types/OrderErrorFragment";
+  AddressFragment,
+  AddressInput,
+  AddressTypeEnum,
+  CountryWithCodeFragment,
+  Node,
+  OrderErrorFragment
+} from "@saleor/graphql";
 import useAddressValidation from "@saleor/hooks/useAddressValidation";
 import { SubmitPromise } from "@saleor/hooks/useForm";
 import useModalDialogErrors from "@saleor/hooks/useModalDialogErrors";
 import { buttonMessages } from "@saleor/intl";
 import { ConfirmButtonTransitionState, DialogHeader } from "@saleor/macaw-ui";
 import { transformAddressToAddressInput } from "@saleor/misc";
-import { AddressInput, AddressTypeEnum } from "@saleor/types/globalTypes";
 import { mapCountriesToChoices } from "@saleor/utils/maps";
 import React from "react";
-import { MessageDescriptor } from "react-intl";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
 
 import { getById } from "../OrderReturnPage/utils";
 import OrderCustomerAddressesEditForm, {
@@ -44,7 +43,11 @@ import {
   OrderCustomerAddressesEditDialogOutput,
   OrderCustomerSearchAddressState
 } from "./types";
-import { getAddressEditProps, validateDefaultAddress } from "./utils";
+import {
+  getAddressEditProps,
+  hasPreSubmitErrors,
+  validateDefaultAddress
+} from "./utils";
 
 export interface OrderCustomerAddressesEditDialogProps {
   open: boolean;
@@ -54,10 +57,10 @@ export interface OrderCustomerAddressesEditDialogProps {
   errors: OrderErrorFragment[];
   orderShippingAddress?: AddressTypeInput;
   orderBillingAddress?: AddressTypeInput;
-  countries?: ShopInfo_shop_countries[];
-  customerAddresses?: CustomerAddresses_user_addresses[];
-  defaultShippingAddress?: CustomerAddresses_user_defaultShippingAddress;
-  defaultBillingAddress?: CustomerAddresses_user_defaultBillingAddress;
+  countries?: CountryWithCodeFragment[];
+  customerAddresses?: AddressFragment[];
+  defaultShippingAddress?: Node;
+  defaultBillingAddress?: Node;
   onClose();
   onConfirm(
     data: Partial<OrderCustomerAddressesEditDialogOutput>
@@ -132,20 +135,22 @@ const OrderCustomerAddressesEditDialog: React.FC<OrderCustomerAddressesEditDialo
     transformAddressToAddressInput(
       customerAddresses.find(getById(selectedCustomerAddressID))
     );
-
-  const handleAddressesSubmit = (data: OrderCustomerAddressesEditFormData) => {
+  // async because handleShippingSubmit can return a promise
+  const handleAddressesSubmit = async (
+    data: OrderCustomerAddressesEditFormData
+  ) => {
     const shippingAddress =
       customerAddresses.length > 0 &&
       data.shippingAddressInputOption ===
         AddressInputOptionEnum.CUSTOMER_ADDRESS
         ? getCustomerAddress(data.customerShippingAddress.id)
-        : handleShippingSubmit(data.shippingAddress);
+        : await handleShippingSubmit(data.shippingAddress);
 
     const billingAddress =
       customerAddresses.length > 0 &&
       data.billingAddressInputOption === AddressInputOptionEnum.CUSTOMER_ADDRESS
         ? getCustomerAddress(data.customerBillingAddress.id)
-        : handleBillingSubmit(data.billingAddress);
+        : await handleBillingSubmit(data.billingAddress);
 
     if (variant === AddressEditDialogVariant.CHANGE_SHIPPING_ADDRESS) {
       return {
@@ -206,12 +211,11 @@ const OrderCustomerAddressesEditDialog: React.FC<OrderCustomerAddressesEditDialo
     handleSubmit(data);
   };
   const handleSubmit = async (data: OrderCustomerAddressesEditFormData) => {
-    const addressesInput = handleAddressesSubmit(data);
-    if (addressesInput) {
+    const addressesInput = await handleAddressesSubmit(data);
+    if (addressesInput && !hasPreSubmitErrors(addressesInput)) {
       await onConfirm(addressesInput as OrderCustomerAddressesEditDialogOutput);
       setAddressSearchState(defaultSearchState);
     }
-
     return Promise.resolve([
       ...shippingValidationErrors,
       ...billingValidationErrors

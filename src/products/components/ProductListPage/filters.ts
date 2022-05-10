@@ -1,16 +1,19 @@
 import { IFilter } from "@saleor/components/Filter";
 import { SingleAutocompleteChoiceType } from "@saleor/components/SingleAutocompleteSelectField";
+import { AttributeInputTypeEnum, StockAvailability } from "@saleor/graphql";
 import { commonMessages, sectionNames } from "@saleor/intl";
-import { AutocompleteFilterOpts, FilterOpts, MinMax } from "@saleor/types";
 import {
-  AttributeInputTypeEnum,
-  StockAvailability
-} from "@saleor/types/globalTypes";
+  AutocompleteFilterOpts,
+  FilterOpts,
+  KeyValue,
+  MinMax
+} from "@saleor/types";
 import {
   createAutocompleteField,
   createBooleanField,
   createDateField,
   createDateTimeField,
+  createKeyValueField,
   createOptionsField,
   createPriceField
 } from "@saleor/utils/filters/fields";
@@ -20,6 +23,7 @@ export enum ProductFilterKeys {
   attributes = "attributes",
   categories = "categories",
   collections = "collections",
+  metadata = "metadata",
   price = "price",
   productType = "productType",
   stock = "stock",
@@ -39,6 +43,7 @@ export interface ProductListFilterOpts {
   attributeChoices: FilterOpts<string[]> & AutocompleteFilterOpts;
   categories: FilterOpts<string[]> & AutocompleteFilterOpts;
   collections: FilterOpts<string[]> & AutocompleteFilterOpts;
+  metadata: FilterOpts<KeyValue[]>;
   price: FilterOpts<MinMax>;
   productType: FilterOpts<string[]> & AutocompleteFilterOpts;
   stockStatus: FilterOpts<StockAvailability>;
@@ -62,6 +67,9 @@ const messages = defineMessages({
   hidden: {
     defaultMessage: "Hidden",
     description: "product is hidden"
+  },
+  metadata: {
+    defaultMessage: "Metadata"
   },
   outOfStock: {
     defaultMessage: "Out Of Stock",
@@ -123,6 +131,14 @@ export function createFilterStructure(
         opts.channel.choices
       ),
       active: opts.channel.active
+    },
+    {
+      ...createKeyValueField(
+        ProductFilterKeys.metadata,
+        intl.formatMessage(messages.metadata),
+        opts.metadata.value
+      ),
+      active: opts.metadata.active
     },
     {
       ...createOptionsField(

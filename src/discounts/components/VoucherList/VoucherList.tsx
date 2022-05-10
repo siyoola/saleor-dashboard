@@ -12,24 +12,21 @@ import TooltipTableCellHeader from "@saleor/components/TooltipTableCellHeader";
 import { commonTooltipMessages } from "@saleor/components/TooltipTableCellHeader/messages";
 import { VoucherListUrlSortField } from "@saleor/discounts/urls";
 import { canBeSorted } from "@saleor/discounts/views/VoucherList/sort";
+import { DiscountValueTypeEnum, VoucherFragment } from "@saleor/graphql";
 import { makeStyles } from "@saleor/macaw-ui";
 import { maybe, renderCollection } from "@saleor/misc";
 import { ChannelProps, ListActions, ListProps, SortPage } from "@saleor/types";
-import { DiscountValueTypeEnum } from "@saleor/types/globalTypes";
 import { getArrowDirection } from "@saleor/utils/sort";
-import { getFooterColSpanWithBulkActions } from "@saleor/utils/tables";
 import classNames from "classnames";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-
-import { VoucherList_vouchers_edges_node } from "../../types/VoucherList";
 
 export interface VoucherListProps
   extends ListProps,
     ListActions,
     SortPage<VoucherListUrlSortField>,
     ChannelProps {
-  vouchers: VoucherList_vouchers_edges_node[];
+  vouchers: VoucherFragment[];
 }
 
 const useStyles = makeStyles(
@@ -84,7 +81,7 @@ const useStyles = makeStyles(
   { name: "VoucherList" }
 );
 
-const numberOfColumns = 6;
+const numberOfColumns = 7;
 
 const VoucherList: React.FC<VoucherListProps> = props => {
   const {
@@ -220,7 +217,7 @@ const VoucherList: React.FC<VoucherListProps> = props => {
       <TableFooter>
         <TableRow>
           <TablePagination
-            colSpan={getFooterColSpanWithBulkActions(vouchers, numberOfColumns)}
+            colSpan={numberOfColumns}
             settings={settings}
             hasNextPage={pageInfo && !disabled ? pageInfo.hasNextPage : false}
             onNextPage={onNextPage}

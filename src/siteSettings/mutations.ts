@@ -1,56 +1,28 @@
 import { gql } from "@apollo/client";
-import { fragmentAddress } from "@saleor/fragments/address";
-import { shopErrorFragment } from "@saleor/fragments/errors";
-import { shopFragment } from "@saleor/fragments/shop";
 
-import { TypedMutation } from "../mutations";
-import {
-  ShopSettingsUpdate,
-  ShopSettingsUpdateVariables
-} from "./types/ShopSettingsUpdate";
-
-const shopSettingsUpdate = gql`
-  ${shopErrorFragment}
-  ${shopFragment}
-  ${fragmentAddress}
+export const shopSettingsUpdate = gql`
   mutation ShopSettingsUpdate(
-    $shopDomainInput: SiteDomainInput!
     $shopSettingsInput: ShopSettingsInput!
     $addressInput: AddressInput
     $isCloudInstance: Boolean!
   ) {
     shopSettingsUpdate(input: $shopSettingsInput) {
       errors {
-        ...ShopErrorFragment
+        ...ShopError
       }
       shop {
-        ...ShopFragment
-      }
-    }
-    shopDomainUpdate(input: $shopDomainInput) @skip(if: $isCloudInstance) {
-      errors {
-        ...ShopErrorFragment
-      }
-      shop {
-        domain {
-          host
-          url
-        }
+        ...Shop
       }
     }
     shopAddressUpdate(input: $addressInput) {
       errors {
-        ...ShopErrorFragment
+        ...ShopError
       }
       shop {
         companyAddress {
-          ...AddressFragment
+          ...Address
         }
       }
     }
   }
 `;
-export const TypedShopSettingsUpdate = TypedMutation<
-  ShopSettingsUpdate,
-  ShopSettingsUpdateVariables
->(shopSettingsUpdate);

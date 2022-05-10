@@ -1,4 +1,11 @@
 import { FetchResult, MutationFunction, MutationResult } from "@apollo/client";
+import {
+  AddressInput,
+  CountryCode,
+  DateRangeInput,
+  OrderStatus,
+  PaymentChargeStatusEnum
+} from "@saleor/graphql";
 import { ConfirmButtonTransitionState, ThemeType } from "@saleor/macaw-ui";
 import uniqBy from "lodash/uniqBy";
 import moment from "moment-timezone";
@@ -8,23 +15,16 @@ import { MultiAutocompleteChoiceType } from "./components/MultiAutocompleteSelec
 import { AddressType, AddressTypeInput } from "./customers/types";
 import {
   commonStatusMessages,
+  errorMessages,
   orderStatusMessages,
   paymentStatusMessages
 } from "./intl";
-import { OrderDetails_order_shippingAddress } from "./orders/types/OrderDetails";
 import {
   MutationResultAdditionalProps,
   PartialMutationProviderOutput,
   StatusType,
   UserError
 } from "./types";
-import {
-  AddressInput,
-  CountryCode,
-  DateRangeInput,
-  OrderStatus,
-  PaymentChargeStatusEnum
-} from "./types/globalTypes";
 
 export type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<
   T,
@@ -290,6 +290,24 @@ export function getMutationProviderData<TData, TVariables>(
   };
 }
 
+export const parseLogMessage = ({
+  intl,
+  code,
+  field
+}: {
+  intl: IntlShape;
+  code: string;
+  field?: string;
+}) =>
+  intl.formatMessage(errorMessages.baseCodeErrorMessage, {
+    errorCode: code,
+    fieldError:
+      field &&
+      intl.formatMessage(errorMessages.codeErrorFieldMessage, {
+        fieldName: field
+      })
+  });
+
 interface User {
   email: string;
   firstName?: string;
@@ -376,16 +394,6 @@ export function findInEnum<TEnum extends {}>(needle: string, haystack: TEnum) {
   }
 
   throw new Error(`Key ${needle} not found in enum`);
-}
-
-export function addressToAddressInput<T>(
-  address: T & OrderDetails_order_shippingAddress
-): AddressInput {
-  const { id, __typename, ...rest } = address;
-  return {
-    ...rest,
-    country: findInEnum(address.country.code, CountryCode)
-  };
 }
 
 export function findValueInEnum<TEnum extends {}>(
@@ -503,3 +511,6 @@ export const combinedMultiAutocompleteChoices = (
   selected: MultiAutocompleteChoiceType[],
   choices: MultiAutocompleteChoiceType[]
 ) => uniqBy([...selected, ...choices], "value");
+
+export const isInDevelopment =
+  !process.env.NODE_ENV || process.env.NODE_ENV === "development";

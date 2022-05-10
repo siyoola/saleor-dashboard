@@ -1,12 +1,9 @@
+import { OrderStatusFilter, PaymentChargeStatusEnum } from "@saleor/graphql";
 import OrderListPage, {
   OrderFilterGiftCard,
   OrderListPageProps
 } from "@saleor/orders/components/OrderListPage";
 import { OrderListUrlSortField } from "@saleor/orders/urls";
-import {
-  OrderStatusFilter,
-  PaymentChargeStatusEnum
-} from "@saleor/types/globalTypes";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 
@@ -69,6 +66,10 @@ const props: OrderListPageProps = {
     giftCard: {
       active: false,
       value: [OrderFilterGiftCard.bought, OrderFilterGiftCard.paid]
+    },
+    metadata: {
+      active: false,
+      value: [{ key: "123", value: "123" }, { key: "321" }]
     }
   },
   limits,

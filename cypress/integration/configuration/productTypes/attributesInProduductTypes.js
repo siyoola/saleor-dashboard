@@ -18,7 +18,7 @@ import { deleteProductsStartsWith } from "../../../support/api/utils/products/pr
 import filterTests from "../../../support/filterTests";
 
 filterTests({ definedTags: ["all"] }, () => {
-  describe("As an admin I want to manage product types", () => {
+  describe("As an admin I want to manage attributes in product types", () => {
     const startsWith = "productType";
     let category;
     let channel;
@@ -28,7 +28,7 @@ filterTests({ definedTags: ["all"] }, () => {
       cy.clearSessionData().loginUserViaRequest();
       deleteProductsStartsWith(startsWith);
       createAttribute({ name: startsWith }).then(resp => (attribute = resp));
-      createCategory(startsWith).then(resp => (category = resp));
+      createCategory({ name: startsWith }).then(resp => (category = resp));
       getDefaultChannel().then(resp => (channel = resp));
     });
 
@@ -48,7 +48,7 @@ filterTests({ definedTags: ["all"] }, () => {
             .click()
             .addAliasToGraphRequest("AssignProductAttribute")
             .assignElements(startsWith, false)
-            .confirmationMessageShouldDisappear()
+            .confirmationMessageShouldAppear()
             .waitForRequestAndCheckIfNoErrors("@AssignProductAttribute");
           getProductType(productType.id);
         })
@@ -71,7 +71,7 @@ filterTests({ definedTags: ["all"] }, () => {
             .click()
             .addAliasToGraphRequest("AssignProductAttribute")
             .assignElements(startsWith, false)
-            .confirmationMessageShouldDisappear()
+            .confirmationMessageShouldAppear()
             .wait("@AssignProductAttribute");
           getProductType(productType.id);
         })
@@ -96,6 +96,7 @@ filterTests({ definedTags: ["all"] }, () => {
             productTypeDetailsUrl(productType.id)
           )
             .get(BUTTON_SELECTORS.deleteIcon)
+            .should("be.enabled")
             .click()
             .addAliasToGraphRequest("UnassignProductAttribute")
             .get(BUTTON_SELECTORS.submit)
@@ -123,6 +124,7 @@ filterTests({ definedTags: ["all"] }, () => {
           )
             .get(BUTTON_SELECTORS.deleteIcon)
             .click()
+            .should("be.enabled")
             .addAliasToGraphRequest("UnassignProductAttribute")
             .get(BUTTON_SELECTORS.submit)
             .click()

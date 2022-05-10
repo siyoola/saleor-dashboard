@@ -1,6 +1,6 @@
 import { appDeepUrl } from "@saleor/apps/urls";
+import { AppExtensionTargetEnum } from "@saleor/graphql";
 import useNavigator from "@saleor/hooks/useNavigator";
-import { AppExtensionTargetEnum } from "@saleor/types/globalTypes";
 import React from "react";
 
 import { AppDialog } from "../AppDialog";
@@ -35,7 +35,11 @@ export const ExternalAppProvider: React.FC = ({ children }) => {
       {children}
       <AppDialog open={open} onClose={handleClose} title={appData?.label}>
         {open && appData && (
-          <AppFrame src={appData.src} appToken={appData.appToken} />
+          <AppFrame
+            src={appData.src}
+            appToken={appData.appToken}
+            appId={appData.id}
+          />
         )}
       </AppDialog>
     </ExternalAppContext.Provider>

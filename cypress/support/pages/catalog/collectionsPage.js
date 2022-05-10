@@ -56,12 +56,24 @@ export function updateCollection({ name, description }) {
 export function assignProductsToCollection(productName) {
   cy.get(COLLECTION_SELECTORS.addProductButton)
     .click()
+    .addAliasToGraphRequest("SearchProducts")
     .get(ASSIGN_ELEMENTS_SELECTORS.searchInput)
-    .type(productName);
+    .type(productName)
+    .waitForRequestAndCheckIfNoErrors("@SearchProducts");
   cy.contains(ASSIGN_ELEMENTS_SELECTORS.tableRow, productName)
     .find(ASSIGN_ELEMENTS_SELECTORS.checkbox)
     .click();
   cy.addAliasToGraphRequest("CollectionAssignProduct");
   cy.get(ASSIGN_ELEMENTS_SELECTORS.submitButton).click();
   cy.waitForRequestAndCheckIfNoErrors("@CollectionAssignProduct");
+}
+
+export function removeProductsFromCollection(productName) {
+  cy.contains(ASSIGN_ELEMENTS_SELECTORS.tableRow, productName)
+    .find(ASSIGN_ELEMENTS_SELECTORS.checkbox)
+    .click()
+    .addAliasToGraphRequest("UnassignCollectionProduct")
+    .get(BUTTON_SELECTORS.deleteIcon)
+    .click()
+    .waitForRequestAndCheckIfNoErrors("@UnassignCollectionProduct");
 }
