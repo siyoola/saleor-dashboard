@@ -2,7 +2,7 @@ import { useUser } from "@dashboard/auth";
 import { ChannelFragment, useBaseChannelsQuery } from "@dashboard/graphql";
 import useLocalStorage from "@dashboard/hooks/useLocalStorage";
 import { getById } from "@dashboard/misc";
-import { useSiyoolConfig } from "@saleor/sdk";
+import { useSaleorConfig } from "@saleor/sdk";
 import React from "react";
 
 interface UseAppChannel {
@@ -34,7 +34,7 @@ const isValidChannel = (channelId: string, channelList?: ChannelFragment[]) => {
 };
 
 export const AppChannelProvider: React.FC = ({ children }) => {
-  const { setChannel } = useSiyoolConfig();
+  const { setChannel } = useSaleorConfig();
   const { authenticated, user } = useUser();
   const [selectedChannel, setSelectedChannel] = useLocalStorage("channel", "");
   const { data: channelData, refetch } = useBaseChannelsQuery({

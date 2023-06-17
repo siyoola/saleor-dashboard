@@ -7,7 +7,7 @@ import { PermissionEnum } from "@dashboard/graphql";
 import useAppState from "@dashboard/hooks/useAppState";
 import { ThemeProvider } from "@dashboard/theme";
 import { ThemeProvider as LegacyThemeProvider } from "@saleor/macaw-ui";
-import { SiyoolProvider } from "@saleor/sdk";
+import { SaleorProvider } from "@saleor/sdk";
 import React from "react";
 import { render } from "react-dom";
 import { ErrorBoundary } from "react-error-boundary";
@@ -102,7 +102,7 @@ const handleLegacyTheming = () => {
 handleLegacyTheming();
 
 const App: React.FC = () => (
-  <SiyoolProvider client={saleorClient}>
+  <SaleorProvider client={saleorClient}>
     <ApolloProvider client={apolloClient}>
       <BrowserRouter basename={getAppMountUri()}>
         <LegacyThemeProvider
@@ -140,7 +140,7 @@ const App: React.FC = () => (
         </LegacyThemeProvider>
       </BrowserRouter>
     </ApolloProvider>
-  </SiyoolProvider>
+  </SaleorProvider>
 );
 
 const Routes: React.FC = () => {
