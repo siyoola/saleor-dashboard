@@ -81,8 +81,8 @@ const AttributeOrganization: React.FC<AttributeOrganizationProps> = props => {
                 />
                 <Typography variant="caption">
                   <FormattedMessage
-                    id="ErNH3D"
-                    defaultMessage="Define where this attribute should be used in Saleor system"
+                    id="5Ugc80"
+                    defaultMessage="Define where this attribute should be used in Siyool system"
                   />
                 </Typography>
               </>

@@ -1,19 +1,19 @@
-import { GetV2SaleorAppsResponse } from "@dashboard/apps/marketplace.types";
+import { GetV2SiyoolAppsResponse } from "@dashboard/apps/marketplace.types";
 import { useEffect, useReducer, useRef } from "react";
 
 interface State {
-  data?: GetV2SaleorAppsResponse.SaleorApp[];
+  data?: GetV2SiyoolAppsResponse.SiyoolApp[];
   error?: Error;
 }
 
 interface Cache {
-  [url: string]: GetV2SaleorAppsResponse.SaleorApp[];
+  [url: string]: GetV2SiyoolAppsResponse.SiyoolApp[];
 }
 
 // discriminated union type
 type Action =
   | { type: "loading" }
-  | { type: "fetched"; payload: GetV2SaleorAppsResponse.SaleorApp[] }
+  | { type: "fetched"; payload: GetV2SiyoolAppsResponse.SiyoolApp[] }
   | { type: "error"; payload: Error };
 
 /**
@@ -76,7 +76,7 @@ function useMarketplaceApps(marketplaceUrl?: string): State {
         }
 
         const data =
-          (await response.json()) as GetV2SaleorAppsResponse.SaleorApp[];
+          (await response.json()) as GetV2SiyoolAppsResponse.SiyoolApp[];
         cache.current[marketplaceUrl] = data;
         if (cancelRequest.current) {
           return;

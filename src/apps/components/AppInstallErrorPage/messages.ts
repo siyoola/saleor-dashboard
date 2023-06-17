@@ -8,9 +8,9 @@ export default defineMessages({
   },
   content: {
     defaultMessage:
-      "Saleor couldn’t fetch crucial information regarding installation. Without those System can’t install the app in your Saleor. Please use the button below to get back to system’s dashboard.",
+      "Siyool couldn’t fetch crucial information regarding installation. Without those System can’t install the app in your Siyool. Please use the button below to get back to system’s dashboard.",
     description: "content",
-    id: "4yRwN+",
+    id: "zFX5br",
   },
   backButton: {
     defaultMessage: "Back to homepage",

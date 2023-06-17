@@ -9,7 +9,7 @@ import {
   PermissionEnum,
 } from "@dashboard/graphql";
 
-import { GetV2SaleorAppsResponse } from "./marketplace.types";
+import { GetV2SiyoolAppsResponse } from "./marketplace.types";
 
 export const activeApp: AppListItemFragment = {
   __typename: "App",
@@ -110,7 +110,7 @@ export const appDetails: NonNullable<AppQuery["app"]> = {
   isActive: true,
   metadata: [],
   name: "app1",
-  author: "Saleor Commerce",
+  author: "Siyool Commerce",
   permissions: [
     {
       __typename: "Permission",
@@ -166,7 +166,7 @@ export const appAvatar: AppAvatarFragment = {
   __typename: "App",
 };
 
-export const releasedApp: GetV2SaleorAppsResponse.ReleasedSaleorApp = {
+export const releasedApp: GetV2SiyoolAppsResponse.ReleasedSiyoolApp = {
   name: {
     en: "Test released app",
   },
@@ -212,7 +212,7 @@ export const releasedApp: GetV2SaleorAppsResponse.ReleasedSaleorApp = {
   ],
 };
 
-export const comingSoonApp: GetV2SaleorAppsResponse.ComingSoonSaleorApp = {
+export const comingSoonApp: GetV2SiyoolAppsResponse.ComingSoonSiyoolApp = {
   name: {
     en: "Test coming soon app",
   },

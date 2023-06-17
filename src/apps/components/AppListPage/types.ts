@@ -1,4 +1,4 @@
-import { GetV2SaleorAppsResponse } from "@dashboard/apps/marketplace.types";
+import { GetV2SiyoolAppsResponse } from "@dashboard/apps/marketplace.types";
 import {
   AppInstallationFragment,
   AppListItemFragment,
@@ -7,6 +7,6 @@ import {
 export interface AppListPageSections {
   appsInstallations?: AppInstallationFragment[];
   installedApps?: AppListItemFragment[];
-  installableMarketplaceApps?: GetV2SaleorAppsResponse.ReleasedSaleorApp[];
-  comingSoonMarketplaceApps?: GetV2SaleorAppsResponse.ComingSoonSaleorApp[];
+  installableMarketplaceApps?: GetV2SiyoolAppsResponse.ReleasedSiyoolApp[];
+  comingSoonMarketplaceApps?: GetV2SiyoolAppsResponse.ComingSoonSiyoolApp[];
 }

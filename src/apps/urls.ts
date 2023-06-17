@@ -127,7 +127,7 @@ export const AppUrls = {
   ) => {
     const apiUrl = new URL(getApiUrl(), window.location.origin).href;
     /**
-     * Use host to preserve port, in case of multiple Saleors running on localhost
+     * Use host to preserve port, in case of multiple Siyools running on localhost
      */
     const apiUrlHost = new URL(apiUrl).host;
 

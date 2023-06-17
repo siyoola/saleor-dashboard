@@ -43,7 +43,7 @@ export const AppInstallPage: React.FC<AppInstallPageProps> = ({
   const classes = useStyles();
   const { theme } = useTheme();
 
-  const getSaleorLogoUrl = () => {
+  const getSiyoolLogoUrl = () => {
     switch (theme) {
       case "defaultLight":
         return saleorLogoLightMode;
@@ -84,7 +84,7 @@ export const AppInstallPage: React.FC<AppInstallPageProps> = ({
                     borderRadius={2}
                     overflow="hidden"
                   >
-                    <img src={getSaleorLogoUrl()} alt="Saleor" />
+                    <img src={getSiyoolLogoUrl()} alt="Siyool" />
                   </Box>
                   <img src={plusIcon} alt="" />
                   <AppAvatar

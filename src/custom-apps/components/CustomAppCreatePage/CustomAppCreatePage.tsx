@@ -87,9 +87,9 @@ const CustomAppCreatePage: React.FC<CustomAppCreatePageProps> = props => {
                 description: "checkbox label",
               })}
               description={intl.formatMessage({
-                id: "flP8Hj",
+                id: "9AtwEk",
                 defaultMessage:
-                  "Expand or restrict app permissions to access certain part of Saleor system.",
+                  "Expand or restrict app permissions to access certain part of Siyool system.",
                 description: "card description",
               })}
             />

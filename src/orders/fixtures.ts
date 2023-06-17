@@ -3329,7 +3329,7 @@ export const grantedRefunds: OrderGrantedRefundFragment[] = [
     id: "1234",
     amount: prepareMoney(),
     reason: "Products returned",
-    app: { id: "123", name: "Saleor Checkout", __typename: "App" },
+    app: { id: "123", name: "Siyool Checkout", __typename: "App" },
     user: null,
     createdAt: "2022-08-22T10:40:22.226875+00:00",
     __typename: "OrderGrantedRefund",

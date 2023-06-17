@@ -33,8 +33,8 @@ const OrderCannotCancelOrderDialog: React.FC<DialogProps> = ({
     <Dialog onClose={onClose} open={open} maxWidth="sm">
       <DialogTitle disableTypography>
         <FormattedMessage
-          id="NhQboB"
-          defaultMessage="Saleor couldn’t cancel order"
+          id="Y7gXVb"
+          defaultMessage="Siyool couldn’t cancel order"
           description="dialog header"
         />
       </DialogTitle>

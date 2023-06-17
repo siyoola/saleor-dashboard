@@ -121,7 +121,7 @@ export type AccountInput = {
   /**
    * Fields required to update the user metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -291,9 +291,9 @@ export type AppTokenInput = {
 
 /** Enum determining type of your App. */
 export enum AppTypeEnum {
-  /** Local Saleor App. The app is fully manageable from dashboard. You can change assigned permissions, add webhooks, or authentication token */
+  /** Local Siyool App. The app is fully manageable from dashboard. You can change assigned permissions, add webhooks, or authentication token */
   LOCAL = 'LOCAL',
-  /** Third party external App. Installation is fully automated. Saleor uses a defined App manifest to gather all required information. */
+  /** Third party external App. Installation is fully automated. Siyool uses a defined App manifest to gather all required information. */
   THIRDPARTY = 'THIRDPARTY'
 }
 
@@ -356,7 +356,7 @@ export type AttributeCreateInput = {
   /**
    * Whether the attribute can be filtered in storefront.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   filterableInStorefront?: InputMaybe<Scalars['Boolean']>;
   /** Whether the attribute can be filtered in dashboard. */
@@ -364,19 +364,19 @@ export type AttributeCreateInput = {
   /**
    * The position of the attribute in the storefront navigation (0 by default).
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   storefrontSearchPosition?: InputMaybe<Scalars['Int']>;
   /**
    * Whether the attribute can be displayed in the admin product list.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   availableInGrid?: InputMaybe<Scalars['Boolean']>;
   /**
    * External ID of this attribute.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
 };
@@ -422,7 +422,7 @@ export type AttributeFilterInput = {
   /**
    * Specifies the channel by which the data should be filtered.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
 };
@@ -533,7 +533,7 @@ export type AttributeUpdateInput = {
   /**
    * Whether the attribute can be filtered in storefront.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   filterableInStorefront?: InputMaybe<Scalars['Boolean']>;
   /** Whether the attribute can be filtered in dashboard. */
@@ -541,19 +541,19 @@ export type AttributeUpdateInput = {
   /**
    * The position of the attribute in the storefront navigation (0 by default).
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   storefrontSearchPosition?: InputMaybe<Scalars['Int']>;
   /**
    * Whether the attribute can be displayed in the admin product list.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   availableInGrid?: InputMaybe<Scalars['Boolean']>;
   /**
    * External ID of this product.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
 };
@@ -577,13 +577,13 @@ export type AttributeValueCreateInput = {
    *
    * Rich text format. For reference see https://editorjs.io/
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.The rich text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
+   * DEPRECATED: this field will be removed in Siyool 4.0.The rich text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
    */
   richText?: InputMaybe<Scalars['JSONString']>;
   /**
    * Represents the text of the attribute value, plain text without formating.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.The plain text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
+   * DEPRECATED: this field will be removed in Siyool 4.0.The plain text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
    */
   plainText?: InputMaybe<Scalars['String']>;
   /** URL of the file attribute. Every time, a new value is created. */
@@ -593,7 +593,7 @@ export type AttributeValueCreateInput = {
   /**
    * External ID of this attribute value.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** Name of a value displayed in the interface. */
@@ -611,33 +611,33 @@ export type AttributeValueInput = {
   /**
    * External ID of this attribute.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   externalReference?: InputMaybe<Scalars['String']>;
-  /** The value or slug of an attribute to resolve. If the passed value is non-existent, it will be created. This field will be removed in Saleor 4.0. */
+  /** The value or slug of an attribute to resolve. If the passed value is non-existent, it will be created. This field will be removed in Siyool 4.0. */
   values?: InputMaybe<Array<Scalars['String']>>;
   /**
    * Attribute value ID or external reference.
    *
-   * Added in Saleor 3.9.
+   * Added in Siyool 3.9.
    */
   dropdown?: InputMaybe<AttributeValueSelectableTypeInput>;
   /**
    * Attribute value ID or external reference.
    *
-   * Added in Saleor 3.9.
+   * Added in Siyool 3.9.
    */
   swatch?: InputMaybe<AttributeValueSelectableTypeInput>;
   /**
    * List of attribute value IDs or external references.
    *
-   * Added in Saleor 3.9.
+   * Added in Siyool 3.9.
    */
   multiselect?: InputMaybe<Array<AttributeValueSelectableTypeInput>>;
   /**
    * Numeric value of an attribute.
    *
-   * Added in Saleor 3.9.
+   * Added in Siyool 3.9.
    */
   numeric?: InputMaybe<Scalars['String']>;
   /** URL of the file attribute. Every time, a new value is created. */
@@ -665,7 +665,7 @@ export type AttributeValueInput = {
  * 3. If value is provided, then attribute value will be resolved by value. If this attribute value doesn't exist, then it will be created.
  * 4. If externalReference and value is provided then new attribute value will be created.
  *
- * Added in Saleor 3.9.
+ * Added in Siyool 3.9.
  */
 export type AttributeValueSelectableTypeInput = {
   /** ID of an attribute value. */
@@ -673,7 +673,7 @@ export type AttributeValueSelectableTypeInput = {
   /**
    * External reference of an attribute value.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** The value or slug of an attribute to resolve. If the passed value is non-existent, it will be created. */
@@ -708,13 +708,13 @@ export type AttributeValueUpdateInput = {
    *
    * Rich text format. For reference see https://editorjs.io/
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.The rich text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
+   * DEPRECATED: this field will be removed in Siyool 4.0.The rich text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
    */
   richText?: InputMaybe<Scalars['JSONString']>;
   /**
    * Represents the text of the attribute value, plain text without formating.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.The plain text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
+   * DEPRECATED: this field will be removed in Siyool 4.0.The plain text attribute hasn't got predefined value, so can be specified only from instance that supports the given attribute.
    */
   plainText?: InputMaybe<Scalars['String']>;
   /** URL of the file attribute. Every time, a new value is created. */
@@ -724,7 +724,7 @@ export type AttributeValueUpdateInput = {
   /**
    * External ID of this attribute value.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** Name of a value displayed in the interface. */
@@ -734,7 +734,7 @@ export type AttributeValueUpdateInput = {
 /**
  * Where filtering options.
  *
- * Added in Saleor 3.11.
+ * Added in Siyool 3.11.
  *
  * Note: this API is currently in Feature Preview and can be subject to changes at later point.
  */
@@ -765,63 +765,63 @@ export type BulkAttributeValueInput = {
   /**
    * External ID of this attribute.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   externalReference?: InputMaybe<Scalars['String']>;
-  /** The value or slug of an attribute to resolve. If the passed value is non-existent, it will be created.This field will be removed in Saleor 4.0. */
+  /** The value or slug of an attribute to resolve. If the passed value is non-existent, it will be created.This field will be removed in Siyool 4.0. */
   values?: InputMaybe<Array<Scalars['String']>>;
   /**
    * Attribute value ID.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   dropdown?: InputMaybe<AttributeValueSelectableTypeInput>;
   /**
    * Attribute value ID.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   swatch?: InputMaybe<AttributeValueSelectableTypeInput>;
   /**
    * List of attribute value IDs.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   multiselect?: InputMaybe<Array<AttributeValueSelectableTypeInput>>;
   /**
    * Numeric value of an attribute.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   numeric?: InputMaybe<Scalars['String']>;
   /**
    * URL of the file attribute. Every time, a new value is created.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   file?: InputMaybe<Scalars['String']>;
   /**
    * File content type.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   contentType?: InputMaybe<Scalars['String']>;
   /**
    * List of entity IDs that will be used as references.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   references?: InputMaybe<Array<Scalars['ID']>>;
   /**
    * Text content in JSON format.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   richText?: InputMaybe<Scalars['JSONString']>;
   /**
    * Plain text content.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   plainText?: InputMaybe<Scalars['String']>;
   /** The boolean value of an attribute to resolve. If the passed value is non-existent, it will be created. */
@@ -829,13 +829,13 @@ export type BulkAttributeValueInput = {
   /**
    * Represents the date value of the attribute value.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   date?: InputMaybe<Scalars['Date']>;
   /**
    * Represents the date/time value of the attribute value.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   dateTime?: InputMaybe<Scalars['DateTime']>;
 };
@@ -859,7 +859,7 @@ export type CatalogueInput = {
   /**
    * Product variant related to the discount.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   variants?: InputMaybe<Array<Scalars['ID']>>;
 };
@@ -891,13 +891,13 @@ export type CategoryInput = {
   /**
    * Fields required to update the category metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the category private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -917,7 +917,7 @@ export type CategorySortingInput = {
   /**
    * Specifies the channel in which to sort the data.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
   /** Sort categories by the selected field. */
@@ -930,7 +930,7 @@ export type ChannelCreateInput = {
   /**
    * The channel stock settings.
    *
-   * Added in Saleor 3.7.
+   * Added in Siyool 3.7.
    */
   stockSettings?: InputMaybe<StockSettingsInput>;
   /** List of shipping zones to assign to the channel. */
@@ -938,13 +938,13 @@ export type ChannelCreateInput = {
   /**
    * List of warehouses to assign to the channel.
    *
-   * Added in Saleor 3.5.
+   * Added in Siyool 3.5.
    */
   addWarehouses?: InputMaybe<Array<Scalars['ID']>>;
   /**
    * The channel order settings
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   orderSettings?: InputMaybe<OrderSettingsInput>;
   /** Name of the channel. */
@@ -956,7 +956,7 @@ export type ChannelCreateInput = {
   /**
    * Default country for the channel. Default country can be used in checkout to determine the stock quantities or calculate taxes when the country was not explicitly provided.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   defaultCountry: CountryCode;
 };
@@ -996,7 +996,7 @@ export type ChannelUpdateInput = {
   /**
    * The channel stock settings.
    *
-   * Added in Saleor 3.7.
+   * Added in Siyool 3.7.
    */
   stockSettings?: InputMaybe<StockSettingsInput>;
   /** List of shipping zones to assign to the channel. */
@@ -1004,13 +1004,13 @@ export type ChannelUpdateInput = {
   /**
    * List of warehouses to assign to the channel.
    *
-   * Added in Saleor 3.5.
+   * Added in Siyool 3.5.
    */
   addWarehouses?: InputMaybe<Array<Scalars['ID']>>;
   /**
    * The channel order settings
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   orderSettings?: InputMaybe<OrderSettingsInput>;
   /** Name of the channel. */
@@ -1020,7 +1020,7 @@ export type ChannelUpdateInput = {
   /**
    * Default country for the channel. Default country can be used in checkout to determine the stock quantities or calculate taxes when the country was not explicitly provided.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   defaultCountry?: InputMaybe<CountryCode>;
   /** List of shipping zones to unassign from the channel. */
@@ -1028,7 +1028,7 @@ export type ChannelUpdateInput = {
   /**
    * List of warehouses to unassign from the channel.
    *
-   * Added in Saleor 3.5.
+   * Added in Siyool 3.5.
    */
   removeWarehouses?: InputMaybe<Array<Scalars['ID']>>;
 };
@@ -1038,7 +1038,7 @@ export type CheckoutAddressValidationRules = {
   checkRequiredFields?: InputMaybe<Scalars['Boolean']>;
   /** Determines if an error should be raised when the provided address doesn't match the expected format. Example: using letters for postal code when the numbers are expected. */
   checkFieldsFormat?: InputMaybe<Scalars['Boolean']>;
-  /** Determines if Saleor should apply normalization on address fields. Example: converting city field to uppercase letters. */
+  /** Determines if Siyool should apply normalization on address fields. Example: converting city field to uppercase letters. */
   enableFieldsNormalization?: InputMaybe<Scalars['Boolean']>;
 };
 
@@ -1120,7 +1120,7 @@ export type CheckoutCreateInput = {
   /**
    * The checkout validation rules that can be changed.
    *
-   * Added in Saleor 3.5.
+   * Added in Siyool 3.5.
    */
   validationRules?: InputMaybe<CheckoutValidationRules>;
 };
@@ -1176,19 +1176,19 @@ export type CheckoutLineInput = {
   /**
    * Custom price of the item. Can be set only by apps with `HANDLE_CHECKOUTS` permission. When the line with the same variant will be provided multiple times, the last price will be used.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   price?: InputMaybe<Scalars['PositiveDecimal']>;
   /**
    * Flag that allow force splitting the same variant into multiple lines by skipping the matching logic.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   forceNewLine?: InputMaybe<Scalars['Boolean']>;
   /**
    * Fields required to update the object's metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -1197,7 +1197,7 @@ export type CheckoutLineUpdateInput = {
   /**
    * ID of the product variant.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `lineId` instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `lineId` instead.
    */
   variantId?: InputMaybe<Scalars['ID']>;
   /** The number of items purchased. Optional for apps, required for any other users. */
@@ -1205,13 +1205,13 @@ export type CheckoutLineUpdateInput = {
   /**
    * Custom price of the item. Can be set only by apps with `HANDLE_CHECKOUTS` permission. When the line with the same variant will be provided multiple times, the last price will be used.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   price?: InputMaybe<Scalars['PositiveDecimal']>;
   /**
    * ID of the line.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   lineId?: InputMaybe<Scalars['ID']>;
 };
@@ -1268,19 +1268,19 @@ export type CollectionCreateInput = {
   /**
    * Publication date. ISO 8601 standard.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   publicationDate?: InputMaybe<Scalars['Date']>;
   /**
    * Fields required to update the collection metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the collection private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** List of products to be added to the collection. */
@@ -1307,7 +1307,7 @@ export type CollectionFilterInput = {
   /**
    * Specifies the channel by which the data should be filtered.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
 };
@@ -1334,19 +1334,19 @@ export type CollectionInput = {
   /**
    * Publication date. ISO 8601 standard.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   publicationDate?: InputMaybe<Scalars['Date']>;
   /**
    * Fields required to update the collection metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the collection private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -1387,7 +1387,7 @@ export type CollectionSortingInput = {
   /**
    * Specifies the channel in which to sort the data.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
   /** Sort collections by the selected field. */
@@ -1734,7 +1734,7 @@ export type CustomerFilterInput = {
   /**
    * Filter by ids.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   ids?: InputMaybe<Array<Scalars['ID']>>;
   updatedAt?: InputMaybe<DateTimeRangeInput>;
@@ -1758,13 +1758,13 @@ export type CustomerInput = {
   /**
    * Fields required to update the user metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the user private metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** User language code. */
@@ -1772,7 +1772,7 @@ export type CustomerInput = {
   /**
    * External ID of the customer.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
 };
@@ -1794,7 +1794,7 @@ export type DateTimeRangeInput = {
 /**
  * Define the filtering options for decimal fields.
  *
- * Added in Saleor 3.14.
+ * Added in Siyool 3.14.
  *
  * Note: this API is currently in Feature Preview and can be subject to changes at later point.
  */
@@ -1826,13 +1826,13 @@ export type DigitalContentInput = {
   /**
    * Fields required to update the digital content metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the digital content private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -1849,13 +1849,13 @@ export type DigitalContentUploadInput = {
   /**
    * Fields required to update the digital content metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the digital content private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** Represents an file in a multipart request. */
@@ -1924,7 +1924,7 @@ export type DraftOrderCreateInput = {
   /**
    * External ID of this order.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** Variant line input consisting of variant ID and quantity of products. */
@@ -1955,7 +1955,7 @@ export type DraftOrderInput = {
   /**
    * External ID of this order.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
 };
@@ -2156,25 +2156,25 @@ export type GiftCardCreateInput = {
   /**
    * The gift card tags to add.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   addTags?: InputMaybe<Array<Scalars['String']>>;
   /**
    * The gift card expiry date.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   expiryDate?: InputMaybe<Scalars['Date']>;
   /**
    * Start date of the gift card in ISO 8601 format.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   startDate?: InputMaybe<Scalars['Date']>;
   /**
    * End date of the gift card in ISO 8601 format.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `expiryDate` from `expirySettings` instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `expiryDate` from `expirySettings` instead.
    */
   endDate?: InputMaybe<Scalars['Date']>;
   /** Balance of the gift card. */
@@ -2184,25 +2184,25 @@ export type GiftCardCreateInput = {
   /**
    * Slug of a channel from which the email should be sent.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   channel?: InputMaybe<Scalars['String']>;
   /**
    * Determine if gift card is active.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   isActive: Scalars['Boolean'];
   /**
    * Code to use the gift card.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. The code is now auto generated.
+   * DEPRECATED: this field will be removed in Siyool 4.0. The code is now auto generated.
    */
   code?: InputMaybe<Scalars['String']>;
   /**
    * The gift card note from the staff member.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   note?: InputMaybe<Scalars['String']>;
 };
@@ -2292,7 +2292,7 @@ export enum GiftCardSortField {
   /**
    * Sort gift cards by created at.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   CREATED_AT = 'CREATED_AT'
 }
@@ -2312,37 +2312,37 @@ export type GiftCardUpdateInput = {
   /**
    * The gift card tags to add.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   addTags?: InputMaybe<Array<Scalars['String']>>;
   /**
    * The gift card expiry date.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   expiryDate?: InputMaybe<Scalars['Date']>;
   /**
    * Start date of the gift card in ISO 8601 format.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   startDate?: InputMaybe<Scalars['Date']>;
   /**
    * End date of the gift card in ISO 8601 format.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `expiryDate` from `expirySettings` instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `expiryDate` from `expirySettings` instead.
    */
   endDate?: InputMaybe<Scalars['Date']>;
   /**
    * The gift card tags to remove.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   removeTags?: InputMaybe<Array<Scalars['String']>>;
   /**
    * The gift card balance amount.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   balanceAmount?: InputMaybe<Scalars['PositiveDecimal']>;
 };
@@ -2350,7 +2350,7 @@ export type GiftCardUpdateInput = {
 /**
  * Define the filtering options for foreign key fields.
  *
- * Added in Saleor 3.14.
+ * Added in Siyool 3.14.
  *
  * Note: this API is currently in Feature Preview and can be subject to changes at later point.
  */
@@ -2382,13 +2382,13 @@ export type InvoiceCreateInput = {
   /**
    * Fields required to update the invoice metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the invoice private metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -3536,7 +3536,7 @@ export type OrderBulkCreateInput = {
   externalReference?: InputMaybe<Scalars['String']>;
   /** Slug of the channel associated with the order. */
   channel: Scalars['String'];
-  /** The date, when the order was inserted to Saleor database. */
+  /** The date, when the order was inserted to Siyool database. */
   createdAt: Scalars['DateTime'];
   /** Status of the order. */
   status?: InputMaybe<OrderStatus>;
@@ -3824,10 +3824,10 @@ export enum OrderEventsEnum {
   PAYMENT_FAILED = 'PAYMENT_FAILED',
   TRANSACTION_EVENT = 'TRANSACTION_EVENT',
   TRANSACTION_CHARGE_REQUESTED = 'TRANSACTION_CHARGE_REQUESTED',
-  /** This field will be removed in Saleor 3.15 (Preview Feature). Use `TRANSACTION_CHARGE_REQUESTED` instead. */
+  /** This field will be removed in Siyool 3.15 (Preview Feature). Use `TRANSACTION_CHARGE_REQUESTED` instead. */
   TRANSACTION_CAPTURE_REQUESTED = 'TRANSACTION_CAPTURE_REQUESTED',
   TRANSACTION_REFUND_REQUESTED = 'TRANSACTION_REFUND_REQUESTED',
-  /** This field will be removed in Saleor 3.15 (Preview Feature). Use `TRANSACTION_CANCEL_REQUESTED` instead. */
+  /** This field will be removed in Siyool 3.15 (Preview Feature). Use `TRANSACTION_CANCEL_REQUESTED` instead. */
   TRANSACTION_VOID_REQUESTED = 'TRANSACTION_VOID_REQUESTED',
   TRANSACTION_CANCEL_REQUESTED = 'TRANSACTION_CANCEL_REQUESTED',
   TRANSACTION_MARK_AS_PAID_FAILED = 'TRANSACTION_MARK_AS_PAID_FAILED',
@@ -3877,7 +3877,7 @@ export type OrderFulfillInput = {
   /**
    * Fulfillment tracking number.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   trackingNumber?: InputMaybe<Scalars['String']>;
 };
@@ -3931,13 +3931,13 @@ export type OrderLineCreateInput = {
   /**
    * Flag that allow force splitting the same variant into multiple lines by skipping the matching logic.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   forceNewLine?: InputMaybe<Scalars['Boolean']>;
   /**
    * Custom price of the item.When the line with the same variant will be provided multiple times, the last price will be used.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -3978,7 +3978,7 @@ export type OrderRefundProductsInput = {
   fulfillmentLines?: InputMaybe<Array<OrderRefundFulfillmentLineInput>>;
   /** The total amount of refund when the value is provided manually. */
   amountToRefund?: InputMaybe<Scalars['PositiveDecimal']>;
-  /** If true, Saleor will refund shipping costs. If amountToRefund is providedincludeShippingCosts will be ignored. */
+  /** If true, Siyool will refund shipping costs. If amountToRefund is providedincludeShippingCosts will be ignored. */
   includeShippingCosts?: InputMaybe<Scalars['Boolean']>;
 };
 
@@ -4007,9 +4007,9 @@ export type OrderReturnProductsInput = {
   fulfillmentLines?: InputMaybe<Array<OrderReturnFulfillmentLineInput>>;
   /** The total amount of refund when the value is provided manually. */
   amountToRefund?: InputMaybe<Scalars['PositiveDecimal']>;
-  /** If true, Saleor will refund shipping costs. If amountToRefund is providedincludeShippingCosts will be ignored. */
+  /** If true, Siyool will refund shipping costs. If amountToRefund is providedincludeShippingCosts will be ignored. */
   includeShippingCosts?: InputMaybe<Scalars['Boolean']>;
-  /** If true, Saleor will call refund action for all lines. */
+  /** If true, Siyool will call refund action for all lines. */
   refund?: InputMaybe<Scalars['Boolean']>;
 };
 
@@ -4026,7 +4026,7 @@ export type OrderSettingsInput = {
   /**
    * Expiration time in minutes. Default null - means do not expire any orders. Enter 0 or null to disable.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4034,7 +4034,7 @@ export type OrderSettingsInput = {
   /**
    * The time in days after expired orders will be deleted.Allowed range is from 1 to 120.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4044,7 +4044,7 @@ export type OrderSettingsInput = {
    * `PAYMENT_FLOW` - [default option] creates the `Payment` object.
    * `TRANSACTION_FLOW` - creates the `TransactionItem` object.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4052,7 +4052,7 @@ export type OrderSettingsInput = {
   /**
    * Determine the transaction flow strategy to be used. Include the selected option in the payload sent to the payment app, as a requested action for the transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4074,13 +4074,13 @@ export enum OrderSortField {
   /**
    * Sort orders by creation date.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   CREATION_DATE = 'CREATION_DATE',
   /**
    * Sort orders by creation date.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   CREATED_AT = 'CREATED_AT',
   /** Sort orders by last modified at. */
@@ -4133,7 +4133,7 @@ export type OrderUpdateInput = {
   /**
    * External ID of this order.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
 };
@@ -4161,13 +4161,13 @@ export type PageCreateInput = {
   /**
    * Publication date. ISO 8601 standard.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `publishedAt` field instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `publishedAt` field instead.
    */
   publicationDate?: InputMaybe<Scalars['String']>;
   /**
    * Publication date time. ISO 8601 standard.
    *
-   * Added in Saleor 3.3.
+   * Added in Siyool 3.3.
    */
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** Search engine optimization fields. */
@@ -4213,13 +4213,13 @@ export type PageInput = {
   /**
    * Publication date. ISO 8601 standard.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `publishedAt` field instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `publishedAt` field instead.
    */
   publicationDate?: InputMaybe<Scalars['String']>;
   /**
    * Publication date time. ISO 8601 standard.
    *
-   * Added in Saleor 3.3.
+   * Added in Siyool 3.3.
    */
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** Search engine optimization fields. */
@@ -4236,25 +4236,25 @@ export enum PageSortField {
   /**
    * Sort pages by creation date.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   CREATION_DATE = 'CREATION_DATE',
   /**
    * Sort pages by publication date.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   PUBLICATION_DATE = 'PUBLICATION_DATE',
   /**
    * Sort pages by publication date.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   PUBLISHED_AT = 'PUBLISHED_AT',
   /**
    * Sort pages by creation date.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.
+   * DEPRECATED: this field will be removed in Siyool 4.0.
    */
   CREATED_AT = 'CREATED_AT'
 }
@@ -4365,7 +4365,7 @@ export type PaymentFilterInput = {
   /**
    * Filter by ids.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   ids?: InputMaybe<Array<Scalars['ID']>>;
   checkouts?: InputMaybe<Array<Scalars['ID']>>;
@@ -4404,13 +4404,13 @@ export type PaymentInput = {
   /**
    * Payment store type.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   storePaymentMethod?: InputMaybe<StorePaymentMethodEnum>;
   /**
    * User public metadata.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -4451,7 +4451,7 @@ export type PermissionGroupCreateInput = {
   /**
    * List of channels to assign to this group.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4461,7 +4461,7 @@ export type PermissionGroupCreateInput = {
   /**
    * Determine if the group has restricted access to channels.  DEFAULT: False
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4507,7 +4507,7 @@ export type PermissionGroupUpdateInput = {
   /**
    * List of channels to assign to this group.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4521,7 +4521,7 @@ export type PermissionGroupUpdateInput = {
   /**
    * List of channels to unassign from this group.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4529,7 +4529,7 @@ export type PermissionGroupUpdateInput = {
   /**
    * Determine if the group has restricted access to channels.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -4616,7 +4616,7 @@ export type ProductAttributeAssignInput = {
   /**
    * Whether attribute is allowed in variant selection. Allowed types are: ['dropdown', 'boolean', 'swatch', 'numeric'].
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   variantSelection?: InputMaybe<Scalars['Boolean']>;
 };
@@ -4627,7 +4627,7 @@ export type ProductAttributeAssignmentUpdateInput = {
   /**
    * Whether attribute is allowed in variant selection. Allowed types are: ['dropdown', 'boolean', 'swatch', 'numeric'].
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   variantSelection: Scalars['Boolean'];
 };
@@ -4664,7 +4664,7 @@ export type ProductBulkCreateInput = {
   /**
    * Determine if taxes are being charged for the product.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `Channel.taxConfiguration` to configure whether tax collection is enabled.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `Channel.taxConfiguration` to configure whether tax collection is enabled.
    */
   chargeTaxes?: InputMaybe<Scalars['Boolean']>;
   /** List of IDs of collections that the product belongs to. */
@@ -4684,7 +4684,7 @@ export type ProductBulkCreateInput = {
   /**
    * Tax rate for enabled tax gateway.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use tax classes to control the tax calculation for a product. If taxCode is provided, Saleor will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use tax classes to control the tax calculation for a product. If taxCode is provided, Siyool will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
    */
   taxCode?: InputMaybe<Scalars['String']>;
   /** Search engine optimization fields. */
@@ -4717,13 +4717,13 @@ export type ProductChannelListingAddInput = {
   /**
    * Publication date. ISO 8601 standard.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `publishedAt` field instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `publishedAt` field instead.
    */
   publicationDate?: InputMaybe<Scalars['Date']>;
   /**
    * Publication date time. ISO 8601 standard.
    *
-   * Added in Saleor 3.3.
+   * Added in Siyool 3.3.
    */
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** Determines if product is visible in product listings (doesn't apply to product collections). */
@@ -4733,13 +4733,13 @@ export type ProductChannelListingAddInput = {
   /**
    * A start date from which a product will be available for purchase. When not set and isAvailable is set to True, the current day is assumed.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `availableForPurchaseAt` field instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `availableForPurchaseAt` field instead.
    */
   availableForPurchaseDate?: InputMaybe<Scalars['Date']>;
   /**
    * A start date time from which a product will be available for purchase. When not set and `isAvailable` is set to True, the current day is assumed.
    *
-   * Added in Saleor 3.3.
+   * Added in Siyool 3.3.
    */
   availableForPurchaseAt?: InputMaybe<Scalars['DateTime']>;
   /** List of variants to which the channel should be assigned. */
@@ -4778,7 +4778,7 @@ export type ProductCreateInput = {
   /**
    * Determine if taxes are being charged for the product.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `Channel.taxConfiguration` to configure whether tax collection is enabled.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `Channel.taxConfiguration` to configure whether tax collection is enabled.
    */
   chargeTaxes?: InputMaybe<Scalars['Boolean']>;
   /** List of IDs of collections that the product belongs to. */
@@ -4798,7 +4798,7 @@ export type ProductCreateInput = {
   /**
    * Tax rate for enabled tax gateway.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use tax classes to control the tax calculation for a product. If taxCode is provided, Saleor will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use tax classes to control the tax calculation for a product. If taxCode is provided, Siyool will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
    */
   taxCode?: InputMaybe<Scalars['String']>;
   /** Search engine optimization fields. */
@@ -4810,19 +4810,19 @@ export type ProductCreateInput = {
   /**
    * Fields required to update the product metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the product private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * External ID of this product.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** ID of the type that product belongs to. */
@@ -4882,25 +4882,25 @@ export type ProductFilterInput = {
   /**
    * Filter by the publication date.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   publishedFrom?: InputMaybe<Scalars['DateTime']>;
   /**
    * Filter by availability for purchase.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   isAvailable?: InputMaybe<Scalars['Boolean']>;
   /**
    * Filter by the date of availability for purchase.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   availableFrom?: InputMaybe<Scalars['DateTime']>;
   /**
    * Filter by visibility in product listings.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   isVisibleInListing?: InputMaybe<Scalars['Boolean']>;
   price?: InputMaybe<PriceRangeInput>;
@@ -4917,7 +4917,7 @@ export type ProductFilterInput = {
   /**
    * Specifies the channel by which the data should be filtered.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
 };
@@ -4930,7 +4930,7 @@ export type ProductInput = {
   /**
    * Determine if taxes are being charged for the product.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `Channel.taxConfiguration` to configure whether tax collection is enabled.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `Channel.taxConfiguration` to configure whether tax collection is enabled.
    */
   chargeTaxes?: InputMaybe<Scalars['Boolean']>;
   /** List of IDs of collections that the product belongs to. */
@@ -4950,7 +4950,7 @@ export type ProductInput = {
   /**
    * Tax rate for enabled tax gateway.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use tax classes to control the tax calculation for a product. If taxCode is provided, Saleor will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use tax classes to control the tax calculation for a product. If taxCode is provided, Siyool will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
    */
   taxCode?: InputMaybe<Scalars['String']>;
   /** Search engine optimization fields. */
@@ -4962,19 +4962,19 @@ export type ProductInput = {
   /**
    * Fields required to update the product metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the product private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * External ID of this product.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
 };
@@ -5007,7 +5007,7 @@ export type ProductOrder = {
   /**
    * Specifies the channel in which to sort the data.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
   /**
@@ -5073,7 +5073,7 @@ export enum ProductOrderField {
   /**
    * Sort products by creation date.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   CREATED_AT = 'CREATED_AT'
 }
@@ -5125,7 +5125,7 @@ export type ProductTypeInput = {
   /**
    * Tax rate for enabled tax gateway.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0.. Use tax classes to control the tax calculation for a product type. If taxCode is provided, Saleor will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
+   * DEPRECATED: this field will be removed in Siyool 4.0.. Use tax classes to control the tax calculation for a product type. If taxCode is provided, Siyool will try to find a tax class with given code (codes are stored in metadata) and assign it. If no tax class is found, it would be created and assigned.
    */
   taxCode?: InputMaybe<Scalars['String']>;
   /** ID of a tax class to assign to this product type. All products of this product type would use this tax class, unless it's overridden in the `Product` type. */
@@ -5168,31 +5168,31 @@ export type ProductVariantBulkCreateInput = {
   /**
    * Determines if variant is in preorder.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   preorder?: InputMaybe<PreorderSettingsInput>;
   /**
    * Determines maximum quantity of `ProductVariant`,that can be bought in a single checkout.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   quantityLimitPerCustomer?: InputMaybe<Scalars['Int']>;
   /**
    * Fields required to update the product variant metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the product variant private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * External ID of this product variant.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** Stocks of a product available for sale. */
@@ -5220,7 +5220,7 @@ export enum ProductVariantBulkErrorCode {
 /**
  * Input fields to update product variants.
  *
- * Added in Saleor 3.11.
+ * Added in Siyool 3.11.
  */
 export type ProductVariantBulkUpdateInput = {
   /** List of attributes specific to this variant. */
@@ -5236,37 +5236,37 @@ export type ProductVariantBulkUpdateInput = {
   /**
    * Determines if variant is in preorder.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   preorder?: InputMaybe<PreorderSettingsInput>;
   /**
    * Determines maximum quantity of `ProductVariant`,that can be bought in a single checkout.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   quantityLimitPerCustomer?: InputMaybe<Scalars['Int']>;
   /**
    * Fields required to update the product variant metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the product variant private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * External ID of this product variant.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /**
    * Stocks input.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -5274,7 +5274,7 @@ export type ProductVariantBulkUpdateInput = {
   /**
    * Channel listings input.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -5293,7 +5293,7 @@ export type ProductVariantChannelListingAddInput = {
   /**
    * The threshold for preorder variant in channel.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   preorderThreshold?: InputMaybe<Scalars['Int']>;
 };
@@ -5321,31 +5321,31 @@ export type ProductVariantCreateInput = {
   /**
    * Determines if variant is in preorder.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   preorder?: InputMaybe<PreorderSettingsInput>;
   /**
    * Determines maximum quantity of `ProductVariant`,that can be bought in a single checkout.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   quantityLimitPerCustomer?: InputMaybe<Scalars['Int']>;
   /**
    * Fields required to update the product variant metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the product variant private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * External ID of this product variant.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** Product ID of which type is the variant. */
@@ -5376,31 +5376,31 @@ export type ProductVariantInput = {
   /**
    * Determines if variant is in preorder.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   preorder?: InputMaybe<PreorderSettingsInput>;
   /**
    * Determines maximum quantity of `ProductVariant`,that can be bought in a single checkout.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   quantityLimitPerCustomer?: InputMaybe<Scalars['Int']>;
   /**
    * Fields required to update the product variant metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the product variant private metadata.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * External ID of this product variant.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
 };
@@ -5481,13 +5481,13 @@ export type PublishableChannelListingInput = {
   /**
    * Publication date. ISO 8601 standard.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `publishedAt` field instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `publishedAt` field instead.
    */
   publicationDate?: InputMaybe<Scalars['Date']>;
   /**
    * Publication date time. ISO 8601 standard.
    *
-   * Added in Saleor 3.3.
+   * Added in Siyool 3.3.
    */
   publishedAt?: InputMaybe<Scalars['DateTime']>;
 };
@@ -5574,7 +5574,7 @@ export type SaleSortingInput = {
   /**
    * Specifies the channel in which to sort the data.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
   /** Sort sales by the selected field. */
@@ -5742,13 +5742,13 @@ export type ShopSettingsInput = {
   /**
    * Enable automatic approval of all new fulfillments.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   fulfillmentAutoApprove?: InputMaybe<Scalars['Boolean']>;
   /**
    * Enable ability to approve fulfillments which are unpaid.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   fulfillmentAllowUnpaid?: InputMaybe<Scalars['Boolean']>;
   /** Default number of max downloads per digital content URL. */
@@ -5764,43 +5764,43 @@ export type ShopSettingsInput = {
   /**
    * Default number of minutes stock will be reserved for anonymous checkout. Enter 0 or null to disable.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   reserveStockDurationAnonymousUser?: InputMaybe<Scalars['Int']>;
   /**
    * Default number of minutes stock will be reserved for authenticated checkout. Enter 0 or null to disable.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   reserveStockDurationAuthenticatedUser?: InputMaybe<Scalars['Int']>;
   /**
    * Default number of maximum line quantity in single checkout. Minimum possible value is 1, default value is 50.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   limitQuantityPerCheckout?: InputMaybe<Scalars['Int']>;
   /**
    * Enable automatic account confirmation by email.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   enableAccountConfirmationByEmail?: InputMaybe<Scalars['Boolean']>;
   /**
    * Include taxes in prices.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `taxConfigurationUpdate` mutation to configure this setting per channel or country.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `taxConfigurationUpdate` mutation to configure this setting per channel or country.
    */
   includeTaxesInPrices?: InputMaybe<Scalars['Boolean']>;
   /**
    * Display prices with tax in store.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `taxConfigurationUpdate` mutation to configure this setting per channel or country.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `taxConfigurationUpdate` mutation to configure this setting per channel or country.
    */
   displayGrossPrices?: InputMaybe<Scalars['Boolean']>;
   /**
    * Charge taxes on shipping.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. To enable taxes for a shipping method, assign a tax class to the shipping method with `shippingPriceCreate` or `shippingPriceUpdate` mutations.
+   * DEPRECATED: this field will be removed in Siyool 4.0. To enable taxes for a shipping method, assign a tax class to the shipping method with `shippingPriceCreate` or `shippingPriceUpdate` mutations.
    */
   chargeTaxesOnShipping?: InputMaybe<Scalars['Boolean']>;
 };
@@ -5832,13 +5832,13 @@ export type StaffCreateInput = {
   /**
    * Fields required to update the user metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the user private metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** List of permission group IDs to which user should be assigned. */
@@ -5879,13 +5879,13 @@ export type StaffUpdateInput = {
   /**
    * Fields required to update the user metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the user private metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** List of permission group IDs to which user should be assigned. */
@@ -5986,7 +5986,7 @@ export enum StorePaymentMethodEnum {
 /**
  * Define the filtering options for string fields.
  *
- * Added in Saleor 3.11.
+ * Added in Siyool 3.11.
  *
  * Note: this API is currently in Feature Preview and can be subject to changes at later point.
  */
@@ -6164,8 +6164,8 @@ export enum TimePeriodTypeEnum {
  *     CHARGE - Represents the charge action.
  *     REFUND - Represents a refund action.
  *     VOID - Represents a void action. This field will be removed
- *     in Saleor 3.14 (Preview Feature). Use `CANCEL` instead.
- *     CANCEL - Represents a cancel action. Added in Saleor 3.12.
+ *     in Siyool 3.14 (Preview Feature). Use `CANCEL` instead.
+ *     CANCEL - Represents a cancel action. Added in Siyool 3.12.
  */
 export enum TransactionActionEnum {
   CHARGE = 'CHARGE',
@@ -6188,37 +6188,37 @@ export type TransactionCreateInput = {
   /**
    * Status of the transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). The `status` is not needed. The amounts can be used to define the current status of transactions.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). The `status` is not needed. The amounts can be used to define the current status of transactions.
    */
   status?: InputMaybe<Scalars['String']>;
   /**
    * Payment type used for this transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `name` and `message` instead.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `name` and `message` instead.
    */
   type?: InputMaybe<Scalars['String']>;
   /**
    * Payment name of the transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   name?: InputMaybe<Scalars['String']>;
   /**
    * The message of the transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   message?: InputMaybe<Scalars['String']>;
   /**
    * Reference of the transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `pspReference` instead.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `pspReference` instead.
    */
   reference?: InputMaybe<Scalars['String']>;
   /**
    * PSP Reference of the transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   pspReference?: InputMaybe<Scalars['String']>;
   /** List of all possible actions for the transaction */
@@ -6232,13 +6232,13 @@ export type TransactionCreateInput = {
   /**
    * Amount voided by this transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `amountCanceled` instead.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `amountCanceled` instead.
    */
   amountVoided?: InputMaybe<MoneyInput>;
   /**
    * Amount canceled by this transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   amountCanceled?: InputMaybe<MoneyInput>;
   /** Payment public metadata. */
@@ -6248,7 +6248,7 @@ export type TransactionCreateInput = {
   /**
    * The url that will allow to redirect user to payment provider page with transaction event details.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   externalUrl?: InputMaybe<Scalars['String']>;
 };
@@ -6257,31 +6257,31 @@ export type TransactionEventInput = {
   /**
    * Current status of the payment transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Status will be calculated by Saleor.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Status will be calculated by Siyool.
    */
   status?: InputMaybe<TransactionStatus>;
   /**
    * Reference of the transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `pspReference` instead.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `pspReference` instead.
    */
   reference?: InputMaybe<Scalars['String']>;
   /**
    * PSP Reference related to this action.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   pspReference?: InputMaybe<Scalars['String']>;
   /**
    * Name of the transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `message` instead. `name` field will be added to `message`.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `message` instead. `name` field will be added to `message`.
    */
   name?: InputMaybe<Scalars['String']>;
   /**
    * The message related to the event.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   message?: InputMaybe<Scalars['String']>;
 };
@@ -6298,7 +6298,7 @@ export enum TransactionEventReportErrorCode {
 /**
  * Represents possible event types.
  *
- *     Added in Saleor 3.12.
+ *     Added in Siyool 3.12.
  *
  *     The following types are possible:
  *     AUTHORIZATION_SUCCESS - represents success authorization.
@@ -6421,37 +6421,37 @@ export type TransactionUpdateInput = {
   /**
    * Status of the transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). The `status` is not needed. The amounts can be used to define the current status of transactions.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). The `status` is not needed. The amounts can be used to define the current status of transactions.
    */
   status?: InputMaybe<Scalars['String']>;
   /**
    * Payment type used for this transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `name` and `message` instead.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `name` and `message` instead.
    */
   type?: InputMaybe<Scalars['String']>;
   /**
    * Payment name of the transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   name?: InputMaybe<Scalars['String']>;
   /**
    * The message of the transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   message?: InputMaybe<Scalars['String']>;
   /**
    * Reference of the transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `pspReference` instead.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `pspReference` instead.
    */
   reference?: InputMaybe<Scalars['String']>;
   /**
    * PSP Reference of the transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   pspReference?: InputMaybe<Scalars['String']>;
   /** List of all possible actions for the transaction */
@@ -6465,13 +6465,13 @@ export type TransactionUpdateInput = {
   /**
    * Amount voided by this transaction.
    *
-   * DEPRECATED: this field will be removed in Saleor 3.15 (Preview Feature). Use `amountCanceled` instead.
+   * DEPRECATED: this field will be removed in Siyool 3.15 (Preview Feature). Use `amountCanceled` instead.
    */
   amountVoided?: InputMaybe<MoneyInput>;
   /**
    * Amount canceled by this transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   amountCanceled?: InputMaybe<MoneyInput>;
   /** Payment public metadata. */
@@ -6481,7 +6481,7 @@ export type TransactionUpdateInput = {
   /**
    * The url that will allow to redirect user to payment provider page with transaction event details.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    */
   externalUrl?: InputMaybe<Scalars['String']>;
 };
@@ -6528,13 +6528,13 @@ export type UpdateInvoiceInput = {
   /**
    * Fields required to update the invoice metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the invoice private metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
 };
@@ -6562,13 +6562,13 @@ export type UserCreateInput = {
   /**
    * Fields required to update the user metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   metadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Fields required to update the user private metadata.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    */
   privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** User language code. */
@@ -6576,7 +6576,7 @@ export type UserCreateInput = {
   /**
    * External ID of the customer.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** URL of a view where users should be redirected to set the password. URL in RFC 1808 format. */
@@ -6680,7 +6680,7 @@ export type VoucherInput = {
   /**
    * Variants discounted by the voucher.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   variants?: InputMaybe<Array<Scalars['ID']>>;
   /** Collections discounted by the voucher. */
@@ -6732,7 +6732,7 @@ export type VoucherSortingInput = {
   /**
    * Specifies the channel in which to sort the data.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use root-level channel argument instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use root-level channel argument instead.
    */
   channel?: InputMaybe<Scalars['String']>;
   /** Sort vouchers by the selected field. */
@@ -6760,7 +6760,7 @@ export type WarehouseCreateInput = {
   /**
    * External ID of the warehouse.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** Warehouse name. */
@@ -6770,7 +6770,7 @@ export type WarehouseCreateInput = {
   /**
    * Shipping zones supported by the warehouse.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Providing the zone ids will raise a ValidationError.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Providing the zone ids will raise a ValidationError.
    */
   shippingZones?: InputMaybe<Array<Scalars['ID']>>;
 };
@@ -6814,7 +6814,7 @@ export type WarehouseUpdateInput = {
   /**
    * External ID of the warehouse.
    *
-   * Added in Saleor 3.10.
+   * Added in Siyool 3.10.
    */
   externalReference?: InputMaybe<Scalars['String']>;
   /** Warehouse name. */
@@ -6824,13 +6824,13 @@ export type WarehouseUpdateInput = {
   /**
    * Click and collect options: local, all or disabled.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   clickAndCollectOption?: InputMaybe<WarehouseClickAndCollectOptionEnum>;
   /**
    * Visibility of warehouse stocks.
    *
-   * Added in Saleor 3.1.
+   * Added in Siyool 3.1.
    */
   isPrivate?: InputMaybe<Scalars['Boolean']>;
 };
@@ -6843,7 +6843,7 @@ export type WebhookCreateInput = {
   /**
    * The events that webhook wants to subscribe.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `asyncEvents` or `syncEvents` instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `asyncEvents` or `syncEvents` instead.
    */
   events?: InputMaybe<Array<WebhookEventTypeEnum>>;
   /** The asynchronous events that webhook wants to subscribe. */
@@ -6857,19 +6857,19 @@ export type WebhookCreateInput = {
   /**
    * The secret key used to create a hash signature with each payload.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. As of Saleor 3.5, webhook payloads default to signing using a verifiable JWS.
+   * DEPRECATED: this field will be removed in Siyool 4.0. As of Siyool 3.5, webhook payloads default to signing using a verifiable JWS.
    */
   secretKey?: InputMaybe<Scalars['String']>;
   /**
    * Subscription query used to define a webhook payload.
    *
-   * Added in Saleor 3.2.
+   * Added in Siyool 3.2.
    */
   query?: InputMaybe<Scalars['String']>;
   /**
    * Custom headers, which will be added to HTTP request. There is a limitation of 5 headers per webhook and 998 characters per header.Only "X-*" and "Authorization*" keys are allowed.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -6957,7 +6957,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A gift card has been sent.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -6967,7 +6967,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A gift card metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   GIFT_CARD_METADATA_UPDATED = 'GIFT_CARD_METADATA_UPDATED',
   /** A new menu created. */
@@ -6989,7 +6989,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * Payment has been made. The order may be partially or fully paid.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -6999,7 +6999,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * The order received a refund. The order may be partially or fully refunded.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7007,7 +7007,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * The order is fully refunded.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7023,13 +7023,13 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * An order metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   ORDER_METADATA_UPDATED = 'ORDER_METADATA_UPDATED',
   /**
    * Orders are imported.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7063,7 +7063,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A customer account metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   CUSTOMER_METADATA_UPDATED = 'CUSTOMER_METADATA_UPDATED',
   /** A new collection is created. */
@@ -7075,7 +7075,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A collection metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   COLLECTION_METADATA_UPDATED = 'COLLECTION_METADATA_UPDATED',
   /** A new product is created. */
@@ -7087,25 +7087,25 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A new product media is created.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   PRODUCT_MEDIA_CREATED = 'PRODUCT_MEDIA_CREATED',
   /**
    * A product media is updated.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   PRODUCT_MEDIA_UPDATED = 'PRODUCT_MEDIA_UPDATED',
   /**
    * A product media is deleted.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   PRODUCT_MEDIA_DELETED = 'PRODUCT_MEDIA_DELETED',
   /**
    * A product metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   PRODUCT_METADATA_UPDATED = 'PRODUCT_METADATA_UPDATED',
   /** A new product variant is created. */
@@ -7123,7 +7123,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A product variant metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   PRODUCT_VARIANT_METADATA_UPDATED = 'PRODUCT_VARIANT_METADATA_UPDATED',
   /** A new checkout is created. */
@@ -7134,7 +7134,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A checkout metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   CHECKOUT_METADATA_UPDATED = 'CHECKOUT_METADATA_UPDATED',
   /** A new fulfillment is created. */
@@ -7146,7 +7146,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A fulfillment metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   FULFILLMENT_METADATA_UPDATED = 'FULFILLMENT_METADATA_UPDATED',
   /** User notification triggered. */
@@ -7184,7 +7184,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A shipping zone metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   SHIPPING_ZONE_METADATA_UPDATED = 'SHIPPING_ZONE_METADATA_UPDATED',
   /** A new staff user is created. */
@@ -7196,13 +7196,13 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * An action requested for transaction.
    *
-   * DEPRECATED: this subscription will be removed in Saleor 3.14 (Preview Feature). Use `TRANSACTION_CHARGE_REQUESTED`, `TRANSACTION_REFUND_REQUESTED`, `TRANSACTION_CANCELATION_REQUESTED` instead.
+   * DEPRECATED: this subscription will be removed in Siyool 3.14 (Preview Feature). Use `TRANSACTION_CHARGE_REQUESTED`, `TRANSACTION_REFUND_REQUESTED`, `TRANSACTION_CANCELATION_REQUESTED` instead.
    */
   TRANSACTION_ACTION_REQUEST = 'TRANSACTION_ACTION_REQUEST',
   /**
    * Transaction item metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   TRANSACTION_ITEM_METADATA_UPDATED = 'TRANSACTION_ITEM_METADATA_UPDATED',
   /** A new translation is created. */
@@ -7218,7 +7218,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A warehouse metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   WAREHOUSE_METADATA_UPDATED = 'WAREHOUSE_METADATA_UPDATED',
   /** A new voucher created. */
@@ -7230,7 +7230,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A voucher metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   VOUCHER_METADATA_UPDATED = 'VOUCHER_METADATA_UPDATED',
   /** An observability event is created. */
@@ -7238,7 +7238,7 @@ export enum WebhookEventTypeAsyncEnum {
   /**
    * A thumbnail is created.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   THUMBNAIL_CREATED = 'THUMBNAIL_CREATED'
 }
@@ -7296,7 +7296,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A gift card has been sent.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7306,7 +7306,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A gift card metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   GIFT_CARD_METADATA_UPDATED = 'GIFT_CARD_METADATA_UPDATED',
   /** A new menu created. */
@@ -7328,7 +7328,7 @@ export enum WebhookEventTypeEnum {
   /**
    * Payment has been made. The order may be partially or fully paid.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7338,7 +7338,7 @@ export enum WebhookEventTypeEnum {
   /**
    * The order received a refund. The order may be partially or fully refunded.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7346,7 +7346,7 @@ export enum WebhookEventTypeEnum {
   /**
    * The order is fully refunded.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7362,13 +7362,13 @@ export enum WebhookEventTypeEnum {
   /**
    * An order metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   ORDER_METADATA_UPDATED = 'ORDER_METADATA_UPDATED',
   /**
    * Orders are imported.
    *
-   * Added in Saleor 3.14.
+   * Added in Siyool 3.14.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7402,7 +7402,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A customer account metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   CUSTOMER_METADATA_UPDATED = 'CUSTOMER_METADATA_UPDATED',
   /** A new collection is created. */
@@ -7414,7 +7414,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A collection metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   COLLECTION_METADATA_UPDATED = 'COLLECTION_METADATA_UPDATED',
   /** A new product is created. */
@@ -7426,25 +7426,25 @@ export enum WebhookEventTypeEnum {
   /**
    * A new product media is created.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   PRODUCT_MEDIA_CREATED = 'PRODUCT_MEDIA_CREATED',
   /**
    * A product media is updated.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   PRODUCT_MEDIA_UPDATED = 'PRODUCT_MEDIA_UPDATED',
   /**
    * A product media is deleted.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   PRODUCT_MEDIA_DELETED = 'PRODUCT_MEDIA_DELETED',
   /**
    * A product metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   PRODUCT_METADATA_UPDATED = 'PRODUCT_METADATA_UPDATED',
   /** A new product variant is created. */
@@ -7462,7 +7462,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A product variant metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   PRODUCT_VARIANT_METADATA_UPDATED = 'PRODUCT_VARIANT_METADATA_UPDATED',
   /** A new checkout is created. */
@@ -7473,7 +7473,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A checkout metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   CHECKOUT_METADATA_UPDATED = 'CHECKOUT_METADATA_UPDATED',
   /** A new fulfillment is created. */
@@ -7485,7 +7485,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A fulfillment metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   FULFILLMENT_METADATA_UPDATED = 'FULFILLMENT_METADATA_UPDATED',
   /** User notification triggered. */
@@ -7523,7 +7523,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A shipping zone metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   SHIPPING_ZONE_METADATA_UPDATED = 'SHIPPING_ZONE_METADATA_UPDATED',
   /** A new staff user is created. */
@@ -7535,13 +7535,13 @@ export enum WebhookEventTypeEnum {
   /**
    * An action requested for transaction.
    *
-   * DEPRECATED: this subscription will be removed in Saleor 3.14 (Preview Feature). Use `TRANSACTION_CHARGE_REQUESTED`, `TRANSACTION_REFUND_REQUESTED`, `TRANSACTION_CANCELATION_REQUESTED` instead.
+   * DEPRECATED: this subscription will be removed in Siyool 3.14 (Preview Feature). Use `TRANSACTION_CHARGE_REQUESTED`, `TRANSACTION_REFUND_REQUESTED`, `TRANSACTION_CANCELATION_REQUESTED` instead.
    */
   TRANSACTION_ACTION_REQUEST = 'TRANSACTION_ACTION_REQUEST',
   /**
    * Transaction item metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   TRANSACTION_ITEM_METADATA_UPDATED = 'TRANSACTION_ITEM_METADATA_UPDATED',
   /** A new translation is created. */
@@ -7557,7 +7557,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A warehouse metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   WAREHOUSE_METADATA_UPDATED = 'WAREHOUSE_METADATA_UPDATED',
   /** A new voucher created. */
@@ -7569,7 +7569,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A voucher metadata is updated.
    *
-   * Added in Saleor 3.8.
+   * Added in Siyool 3.8.
    */
   VOUCHER_METADATA_UPDATED = 'VOUCHER_METADATA_UPDATED',
   /** An observability event is created. */
@@ -7577,7 +7577,7 @@ export enum WebhookEventTypeEnum {
   /**
    * A thumbnail is created.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    */
   THUMBNAIL_CREATED = 'THUMBNAIL_CREATED',
   /** Authorize payment. */
@@ -7597,7 +7597,7 @@ export enum WebhookEventTypeEnum {
   /**
    * Event called when charge has been requested for transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7605,7 +7605,7 @@ export enum WebhookEventTypeEnum {
   /**
    * Event called when refund has been requested for transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7613,7 +7613,7 @@ export enum WebhookEventTypeEnum {
   /**
    * Event called when cancel has been requested for transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7621,13 +7621,13 @@ export enum WebhookEventTypeEnum {
   /**
    * Event called for checkout tax calculation.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   CHECKOUT_CALCULATE_TAXES = 'CHECKOUT_CALCULATE_TAXES',
   /**
    * Event called for order tax calculation.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   ORDER_CALCULATE_TAXES = 'ORDER_CALCULATE_TAXES',
   /** Fetch external shipping methods for checkout. */
@@ -7660,7 +7660,7 @@ export enum WebhookEventTypeSyncEnum {
   /**
    * Event called when charge has been requested for transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7668,7 +7668,7 @@ export enum WebhookEventTypeSyncEnum {
   /**
    * Event called when refund has been requested for transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7676,7 +7676,7 @@ export enum WebhookEventTypeSyncEnum {
   /**
    * Event called when cancel has been requested for transaction.
    *
-   * Added in Saleor 3.13.
+   * Added in Siyool 3.13.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
@@ -7684,13 +7684,13 @@ export enum WebhookEventTypeSyncEnum {
   /**
    * Event called for checkout tax calculation.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   CHECKOUT_CALCULATE_TAXES = 'CHECKOUT_CALCULATE_TAXES',
   /**
    * Event called for order tax calculation.
    *
-   * Added in Saleor 3.6.
+   * Added in Siyool 3.6.
    */
   ORDER_CALCULATE_TAXES = 'ORDER_CALCULATE_TAXES',
   /** Fetch external shipping methods for checkout. */
@@ -7848,7 +7848,7 @@ export type WebhookUpdateInput = {
   /**
    * The events that webhook wants to subscribe.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. Use `asyncEvents` or `syncEvents` instead.
+   * DEPRECATED: this field will be removed in Siyool 4.0. Use `asyncEvents` or `syncEvents` instead.
    */
   events?: InputMaybe<Array<WebhookEventTypeEnum>>;
   /** The asynchronous events that webhook wants to subscribe. */
@@ -7862,19 +7862,19 @@ export type WebhookUpdateInput = {
   /**
    * Use to create a hash signature with each payload.
    *
-   * DEPRECATED: this field will be removed in Saleor 4.0. As of Saleor 3.5, webhook payloads default to signing using a verifiable JWS.
+   * DEPRECATED: this field will be removed in Siyool 4.0. As of Siyool 3.5, webhook payloads default to signing using a verifiable JWS.
    */
   secretKey?: InputMaybe<Scalars['String']>;
   /**
    * Subscription query used to define a webhook payload.
    *
-   * Added in Saleor 3.2.
+   * Added in Siyool 3.2.
    */
   query?: InputMaybe<Scalars['String']>;
   /**
    * Custom headers, which will be added to HTTP request. There is a limitation of 5 headers per webhook and 998 characters per header.Only "X-*" and "Authorization*" keys are allowed.
    *
-   * Added in Saleor 3.12.
+   * Added in Siyool 3.12.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */

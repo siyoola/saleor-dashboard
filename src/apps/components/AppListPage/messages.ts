@@ -2,9 +2,9 @@ import { defineMessages } from "react-intl";
 
 export const messages = defineMessages({
   installAppDescription: {
-    id: "ARfw53",
+    id: "QEUUcy",
     defaultMessage:
-      "Install apps created by Saleor team or install external apps.",
+      "Install apps created by Siyool team or install external apps.",
     description: "description",
   },
   installedApps: {

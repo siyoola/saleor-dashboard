@@ -322,8 +322,8 @@ export type AppManifestExtensionFieldPolicy = {
 	mount?: FieldPolicy<any> | FieldReadFunction<any>,
 	target?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type AppManifestRequiredSaleorVersionKeySpecifier = ('constraint' | 'satisfied' | AppManifestRequiredSaleorVersionKeySpecifier)[];
-export type AppManifestRequiredSaleorVersionFieldPolicy = {
+export type AppManifestRequiredSiyoolVersionKeySpecifier = ('constraint' | 'satisfied' | AppManifestRequiredSiyoolVersionKeySpecifier)[];
+export type AppManifestRequiredSiyoolVersionFieldPolicy = {
 	constraint?: FieldPolicy<any> | FieldReadFunction<any>,
 	satisfied?: FieldPolicy<any> | FieldReadFunction<any>
 };
@@ -2205,7 +2205,7 @@ export type LimitsFieldPolicy = {
 	staffUsers?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouses?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ManifestKeySpecifier = ('identifier' | 'version' | 'name' | 'about' | 'permissions' | 'appUrl' | 'configurationUrl' | 'tokenTargetUrl' | 'dataPrivacy' | 'dataPrivacyUrl' | 'homepageUrl' | 'supportUrl' | 'extensions' | 'webhooks' | 'audience' | 'requiredSaleorVersion' | 'author' | 'brand' | ManifestKeySpecifier)[];
+export type ManifestKeySpecifier = ('identifier' | 'version' | 'name' | 'about' | 'permissions' | 'appUrl' | 'configurationUrl' | 'tokenTargetUrl' | 'dataPrivacy' | 'dataPrivacyUrl' | 'homepageUrl' | 'supportUrl' | 'extensions' | 'webhooks' | 'audience' | 'requiredSiyoolVersion' | 'author' | 'brand' | ManifestKeySpecifier)[];
 export type ManifestFieldPolicy = {
 	identifier?: FieldPolicy<any> | FieldReadFunction<any>,
 	version?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -2222,7 +2222,7 @@ export type ManifestFieldPolicy = {
 	extensions?: FieldPolicy<any> | FieldReadFunction<any>,
 	webhooks?: FieldPolicy<any> | FieldReadFunction<any>,
 	audience?: FieldPolicy<any> | FieldReadFunction<any>,
-	requiredSaleorVersion?: FieldPolicy<any> | FieldReadFunction<any>,
+	requiredSiyoolVersion?: FieldPolicy<any> | FieldReadFunction<any>,
 	author?: FieldPolicy<any> | FieldReadFunction<any>,
 	brand?: FieldPolicy<any> | FieldReadFunction<any>
 };
@@ -6223,9 +6223,9 @@ export type StrictTypedTypePolicies = {
 		keyFields?: false | AppManifestExtensionKeySpecifier | (() => undefined | AppManifestExtensionKeySpecifier),
 		fields?: AppManifestExtensionFieldPolicy,
 	},
-	AppManifestRequiredSaleorVersion?: Omit<TypePolicy, "fields" | "keyFields"> & {
-		keyFields?: false | AppManifestRequiredSaleorVersionKeySpecifier | (() => undefined | AppManifestRequiredSaleorVersionKeySpecifier),
-		fields?: AppManifestRequiredSaleorVersionFieldPolicy,
+	AppManifestRequiredSiyoolVersion?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | AppManifestRequiredSiyoolVersionKeySpecifier | (() => undefined | AppManifestRequiredSiyoolVersionKeySpecifier),
+		fields?: AppManifestRequiredSiyoolVersionFieldPolicy,
 	},
 	AppManifestWebhook?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | AppManifestWebhookKeySpecifier | (() => undefined | AppManifestWebhookKeySpecifier),

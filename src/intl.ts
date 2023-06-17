@@ -103,8 +103,8 @@ export const commonMessages = defineMessages({
     defaultMessage: "Properties",
   },
   readOnly: {
-    id: "kFYlu2",
-    defaultMessage: "Saleor runs in read-only mode. Changes not saved.",
+    id: "dbrv3S",
+    defaultMessage: "Siyool runs in read-only mode. Changes not saved.",
   },
   requiredField: {
     id: "TKmub+",
@@ -124,8 +124,8 @@ export const commonMessages = defineMessages({
       "Your session has expired. Please log in again to continue.",
   },
   somethingWentWrong: {
-    id: "LVa5ew",
-    defaultMessage: "Saleor ran into an unexpected problem",
+    id: "L886q/",
+    defaultMessage: "Siyool ran into an unexpected problem",
   },
   defaultErrorTitle: {
     id: "JqiqNj",

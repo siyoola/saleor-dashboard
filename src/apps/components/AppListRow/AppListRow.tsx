@@ -1,5 +1,5 @@
 import { useAppListContext } from "@dashboard/apps/context";
-import { GetV2SaleorAppsResponse } from "@dashboard/apps/marketplace.types";
+import { GetV2SiyoolAppsResponse } from "@dashboard/apps/marketplace.types";
 import {
   getAppDetails,
   resolveInstallationOfMarketplaceApp,
@@ -15,7 +15,7 @@ import AppListCardIntegrations from "./AppListCardIntegrations";
 import AppListCardLinks from "./AppListCardLinks";
 
 interface AppListRowProps {
-  appPair: GetV2SaleorAppsResponse.SaleorApp[];
+  appPair: GetV2SiyoolAppsResponse.SiyoolApp[];
   appInstallationList?: AppInstallationFragment[];
   navigateToAppInstallPage?: (manifestUrl: string) => void;
   navigateToGithubForkPage?: (githubForkUrl: string) => void;
@@ -33,7 +33,7 @@ const AppListRow: React.FC<AppListRowProps> = ({
   const isSingleApp = appPair.length === 1;
 
   const appDetails = React.useCallback(
-    (app: GetV2SaleorAppsResponse.SaleorApp) =>
+    (app: GetV2SiyoolAppsResponse.SiyoolApp) =>
       getAppDetails({
         intl,
         app,

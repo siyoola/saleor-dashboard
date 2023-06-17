@@ -239,7 +239,7 @@ export function getMutationState(
   return "default";
 }
 
-export interface SaleorMutationResult {
+export interface SiyoolMutationResult {
   errors?: any[];
 }
 
@@ -264,7 +264,7 @@ export const hasMutationErrors = (result: FetchResult): boolean => {
     return false;
   }
   return Object.values(result.data).some(
-    ({ errors }: SaleorMutationResult) => errors.length > 0,
+    ({ errors }: SiyoolMutationResult) => errors.length > 0,
   );
 };
 
@@ -289,7 +289,7 @@ export const getMutationErrors = <
 };
 
 export function getMutationStatus<
-  TData extends Record<string, SaleorMutationResult | any>,
+  TData extends Record<string, SiyoolMutationResult | any>,
 >(opts: MutationResult<TData>): ConfirmButtonTransitionState {
   const errors = getMutationErrors(opts);
 

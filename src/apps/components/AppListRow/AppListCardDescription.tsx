@@ -1,11 +1,11 @@
-import { GetV2SaleorAppsResponse } from "@dashboard/apps/marketplace.types";
+import { GetV2SiyoolAppsResponse } from "@dashboard/apps/marketplace.types";
 import { Box, Text } from "@saleor/macaw-ui/next";
 import React from "react";
 
 import { AppLogo } from "./AppLogo";
 
 interface AppListCardDescriptionProps {
-  app: GetV2SaleorAppsResponse.SaleorApp;
+  app: GetV2SiyoolAppsResponse.SiyoolApp;
 }
 
 const AppListCardDescription: React.FC<AppListCardDescriptionProps> = ({

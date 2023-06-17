@@ -14,9 +14,9 @@ export const errorMessages = defineMessages({
     description: "error message",
   },
   serverError: {
-    id: "ChGI4V",
+    id: "UlXg+C",
     defaultMessage:
-      "Saleor is unavailable, please check your network connection and try again.",
+      "Siyool is unavailable, please check your network connection and try again.",
     description: "error message",
   },
   noPermissionsError: {

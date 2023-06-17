@@ -17,8 +17,8 @@ export const messages = defineMessages({
     description: "information",
   },
   installationCloudOnly: {
-    defaultMessage: "Use Saleor Cloud to access Saleor Apps",
+    defaultMessage: "Use Siyool Cloud to access Siyool Apps",
     description: "description",
-    id: "IEpmGQ",
+    id: "pJwwE1",
   },
 });

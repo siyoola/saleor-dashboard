@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace GetV2SaleorAppsResponse {
-  export interface SaleorAppBase {
+export namespace GetV2SiyoolAppsResponse {
+  export interface SiyoolAppBase {
     name: {
       en: string;
     };
@@ -24,7 +24,7 @@ export namespace GetV2SaleorAppsResponse {
     }>;
   }
 
-  export type ReleasedSaleorApp = SaleorAppBase & {
+  export type ReleasedSiyoolApp = SiyoolAppBase & {
     repositoryUrl: string;
     supportUrl: string;
     privacyUrl: string;
@@ -32,9 +32,9 @@ export namespace GetV2SaleorAppsResponse {
     githubForkUrl?: string;
   };
 
-  export type ComingSoonSaleorApp = SaleorAppBase & {
+  export type ComingSoonSiyoolApp = SiyoolAppBase & {
     releaseDate: string;
   };
 
-  export type SaleorApp = ReleasedSaleorApp | ComingSoonSaleorApp;
+  export type SiyoolApp = ReleasedSiyoolApp | ComingSoonSiyoolApp;
 }
