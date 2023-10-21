@@ -12,10 +12,12 @@ import { TopNav } from "@dashboard/components/AppLayout/TopNav";
 import AssignAttributeValueDialog from "@dashboard/components/AssignAttributeValueDialog";
 import { AttributeInput, Attributes } from "@dashboard/components/Attributes";
 import CardSpacer from "@dashboard/components/CardSpacer";
+import CardTitle from "@dashboard/components/CardTitle";
 import ChannelsAvailabilityCard from "@dashboard/components/ChannelsAvailabilityCard";
 import { ConfirmButtonTransitionState } from "@dashboard/components/ConfirmButton";
 import { useDevModeContext } from "@dashboard/components/DevModePanel/hooks";
 import { DetailPageLayout } from "@dashboard/components/Layouts";
+import Link from "@dashboard/components/Link";
 import { Metadata } from "@dashboard/components/Metadata/Metadata";
 import Savebar from "@dashboard/components/Savebar";
 import { SeoForm } from "@dashboard/components/SeoForm";
@@ -44,10 +46,15 @@ import { maybe } from "@dashboard/misc";
 import ProductExternalMediaDialog from "@dashboard/products/components/ProductExternalMediaDialog";
 import { ProductOrganization } from "@dashboard/products/components/ProductOrganization/ProductOrganization";
 import { defaultGraphiQLQuery } from "@dashboard/products/queries";
-import { productImageUrl, productListUrl } from "@dashboard/products/urls";
+import {
+  productImageUrl,
+  productListUrl,
+  productUrl,
+} from "@dashboard/products/urls";
 import { ProductVariantListError } from "@dashboard/products/views/ProductUpdate/handlers/errors";
 import { UseProductUpdateHandlerError } from "@dashboard/products/views/ProductUpdate/handlers/useProductUpdateHandler";
 import { FetchMoreProps, RelayToFlat } from "@dashboard/types";
+import { Card, CardContent } from "@material-ui/core";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -429,6 +436,22 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
                 {...availabilityCommonProps}
                 channels={listings}
               />
+              <CardSpacer />
+              <Card>
+                <CardTitle title={"Translations"} />
+                <CardContent>
+                  <div style={{ marginBottom: 12 }}>
+                    <Link href={"/translations/AR_LY" + productUrl(productId)}>
+                      عربي
+                    </Link>
+                  </div>
+                  <div>
+                    <Link href={"/translations/EN_US" + productUrl(productId)}>
+                      English
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
               <CardSpacer />
               <ProductTaxes
                 value={data.taxClassId}
