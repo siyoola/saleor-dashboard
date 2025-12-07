@@ -13,7 +13,7 @@
   },
   "homepage": "https://saleor.io/",
   "engines": {
-    "node": ">=18 <19",
+    "node": ">=24 <25",
     "npm": ">=7"
   },
   "dependencies": {
