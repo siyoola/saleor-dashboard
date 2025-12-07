@@ -257,6 +257,12 @@ const OrderPayment: React.FC<OrderPaymentProps> = props => {
               {}
             </div>
           </div>
+          <div>
+            <div>Payment Gateway:</div>
+            <div className={classes.leftmostRightAlignedElement}>
+              {order?.payments?.filter(p => p.isActive === true)?.[0]?.gateway}
+            </div>
+          </div>
         </div>
       </CardContent>
     </Card>
